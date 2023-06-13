@@ -1,0 +1,1419 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+$color_dark_red: #9e2222;
+$color_mario_red: #e60012;
+$coloro_red: #e70112;
+
+@mixin btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 50px;
+
+    font: {
+        weight: 800;
+        size: 1.3rem;
+    }
+}
+
+@mixin list_box {
+    display: flex;
+    width: 75%;
+}
+
+@mixin card_item {
+    position: relative;
+    flex: 1;
+    margin: 3rem;
+    padding: 2rem 2rem 4rem 2rem;
+    background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.nav_top {
+    background-color: #e60012;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    img {
+        width: 97px;
+        margin-left: 3rem;
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: all .5s;
+
+        img {
+            width: 17px;
+            height: 19px;
+            margin: 0 0.5rem 0 0;
+        }
+
+        p {
+            font: {
+                weight: 600;
+                size: 14px;
+            }
+        }
+
+        &:hover {
+            background-color: #9e2222;
+        }
+    }
+}
+
+.nav_section {
+    height: 100px;
+    position: static;
+    top: 0px;
+
+    .nav_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100px;
+        background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+
+        .nav_btn {
+
+            a:first-child {
+                border: 2px solid white;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 0.8rem 1.8rem;
+                margin: 0 0.2rem;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                font-weight: 700;
+                transition: all .3s;
+                z-index: 0;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 100%;
+                    border-radius: 7px;
+                    background-color: #e60012;
+                    transition: all .3s;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    border: 2px solid white;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+    // height: 100vh;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-logos.png), linear-gradient(180deg, #e70112 16%, #b20722 76%);
+    position: relative;
+
+    .row {
+        display: flex;
+        width: 80%;
+        margin-top: -8rem;
+
+        .col:first-child {
+            width: 28rem;
+
+            & h2 span:first-child {
+                font-size: 1.75rem;
+            }
+
+            & h2 span:last-child {
+                font-size: 11rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+                line-height: 2rem;
+            }
+
+            a {
+                @include btn();
+                margin-top: 2rem;
+                border: 2px solid transparent;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    border: 2px solid white;
+                }
+            }
+
+        }
+
+        .col:last-child {
+
+            picture {
+                position: absolute;
+            }
+
+            .banner1 {
+                .mario_1 {
+                    width: 25%;
+                    top: 100vh;
+                    right: 25%;
+                    animation: mario_1 12s both ease-in-out infinite;
+
+                    @keyframes mario_1 {
+                        0% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: -5vh;
+                            right: 25%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: -5vh;
+                            right: 25%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                            ;
+                        }
+                    }
+                }
+
+                .luigi {
+                    width: 20%;
+                    right: 5%;
+                    top: 20vh;
+                    animation: luigi 12s .3s both ease-in-out infinite;
+
+                    @keyframes luigi {
+                        0% {
+                            top: 100vh;
+                            right: 5%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 20vh;
+                            right: 5%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 20vh;
+                            right: 5%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 5%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 5%;
+                            opacity: 0;
+                            ;
+                        }
+                    }
+                }
+
+                .brick {
+                    width: 40%;
+                    right: 8%;
+                    top: 10vh;
+                    animation: brick 12s .4s both ease-in-out infinite;
+
+                    @keyframes brick {
+                        0% {
+                            top: 10vh;
+                            right: -100%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 10vh;
+                            right: 8%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 10vh;
+                            right: 8%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 10vh;
+                            right: -100%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 10vh;
+                            right: -100%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .coins {
+                    width: 5%;
+                    z-index: 5;
+                }
+
+                .coin_5 {
+                    left: 5%;
+                    top: 65vh;
+                    animation: coin_5 12s .4s both ease-in-out infinite;
+
+                    @keyframes coin_5 {
+                        0% {
+                            top: 100vh;
+                            left: 5%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 65vh;
+                            left: 5%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 65vh;
+                            left: 5%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 5%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 5%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .coin_4 {
+                    left: 11%;
+                    top: 65vh;
+                    animation: coin_4 12s .3s both ease-in-out infinite;
+
+                    @keyframes coin_4 {
+                        0% {
+                            top: 100vh;
+                            left: 11%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 65vh;
+                            left: 11%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 65vh;
+                            left: 11%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 11%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 11%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .coin_3 {
+                    left: 17%;
+                    top: 65vh;
+                    animation: coin_3 12s .2s both ease-in-out infinite;
+
+                    @keyframes coin_3 {
+                        0% {
+                            top: 100vh;
+                            left: 17%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 65vh;
+                            left: 17%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 65vh;
+                            left: 17%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 17%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 17%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .coin_2 {
+                    left: 23%;
+                    top: 65vh;
+                    animation: coin_2 12s .1s both ease-in-out infinite;
+
+                    @keyframes coin_2 {
+                        0% {
+                            top: 100vh;
+                            left: 23%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 65vh;
+                            left: 23%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 65vh;
+                            left: 23%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 23%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 23%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .coin_1 {
+                    left: 29%;
+                    top: 65vh;
+                    animation: coin_1 12s both ease-in-out infinite;
+
+                    @keyframes coin_1 {
+                        0% {
+                            top: 100vh;
+                            left: 29%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 65vh;
+                            left: 29%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 65vh;
+                            left: 29%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 29%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 29%;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .banner2 {
+                .mario_2 {
+                    width: 30%;
+                    top: 10vh;
+                    right: 25%;
+                    animation: mario_2 12s 4s both ease-in-out infinite;
+
+                    @keyframes mario_2 {
+                        0% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 10vh;
+                            right: 25%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 10vh;
+                            right: 25%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 25%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .peach {
+                    width: 15%;
+                    top: 35vh;
+                    right: 18%;
+                    animation: peach 12s 4.3s both ease-in-out infinite;
+
+                    @keyframes peach {
+                        0% {
+                            top: 100vh;
+                            right: 18%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 35vh;
+                            right: 18%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 35vh;
+                            right: 18%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 18%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 18%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .pipe {
+                    width: 15%;
+                    top: 15vh;
+                    right: 10%;
+                    animation: pipe 12s 4.4s both ease-in-out infinite;
+
+                    @keyframes pipe {
+                        0% {
+                            top: 100vh;
+                            right: 10%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 15vh;
+                            right: 10%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 15vh;
+                            right: 10%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 10%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 10%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .block {
+                    width: 8%;
+                    z-index: 5;
+                }
+
+                .block_5 {
+                    left: 5%;
+                    top: 62vh;
+                    animation: block_5 12s 4.4s both ease-in-out infinite;
+
+                    @keyframes block_5 {
+                        0% {
+                            left: 5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            left: 5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            left: 5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .block_3 {
+                    left: 11.5%;
+                    top: 62vh;
+                    animation: block_3 12s 4.3s both ease-in-out infinite;
+
+                    @keyframes block_3 {
+                        0% {
+                            left: 11.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 11.5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 11.5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            left: 11.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            left: 11.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .block_2 {
+                    left: 18%;
+                    top: 62vh;
+                    animation: block_2 12s 4.2s both ease-in-out infinite;
+
+                    @keyframes block_2 {
+                        0% {
+                            left: 18%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 18%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 18%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            left: 18%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            left: 18%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .block_4 {
+                    left: 24.5%;
+                    top: 62vh;
+                    animation: block_4 12s 4.1s both ease-in-out infinite;
+
+                    @keyframes block_4 {
+                        0% {
+                            left: 24.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 24.5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 24.5%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            left: 24.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            left: 24.5%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .block_1 {
+                    left: 31%;
+                    top: 62vh;
+                    animation: block_1 12s 4s both ease-in-out infinite;
+
+                    @keyframes block_1 {
+                        0% {
+                            left: 31%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 31%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 31%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            left: 31%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            left: 31%;
+                            top: 100vh;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .banner3 {
+                .mario_3 {
+                    width: 30%;
+                    top: 10vh;
+                    right: 32%;
+                    animation: mario_3 12s 8s both ease-in-out infinite;
+
+                    @keyframes mario_3 {
+                        0% {
+                            top: 100vh;
+                            right: 32%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 10vh;
+                            right: 32%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 10vh;
+                            right: 32%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 32%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 32%;
+                            opacity: 0
+                        }
+                    }
+                }
+
+                .toad {
+                    width: 10%;
+                    top: 30vh;
+                    right: 29%;
+                    animation: toad 12s 8.3s both ease-in-out infinite;
+
+                    @keyframes toad {
+                        0% {
+                            top: 100vh;
+                            right: 29%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            top: 30vh;
+                            right: 29%;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            top: 30vh;
+                            right: 29%;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            right: 29%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            right: 29%;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .star {
+                    width: 20%;
+                    top: 0vh;
+                    right: 18%;
+                    animation: star 12s 8.35s both ease-in-out infinite;
+
+                    @keyframes star {
+                        0% {
+                            transform: scale(0);
+                            opacity: 0;
+                        }
+
+                        10% {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+
+                        20% {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+
+                        30% {
+                            transform: scale(0);
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform: scale(0);
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .mushroom {
+                    width: 8%;
+                    z-index: 5;
+                }
+
+                .mushroom_3 {
+                    left: 10%;
+                    top: 62vh;
+                    animation: mushroom_3 12s 7.8s both ease-in-out infinite;
+
+                    @keyframes mushroom_3 {
+                        0% {
+                            top: 100vh;
+                            left: 10%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 10%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 10%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 10%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 10%;
+                            opacity: 0
+                        }
+                    }
+                }
+
+                .mushroom_2 {
+                    left: 20%;
+                    top: 62vh;
+                    animation: mushroom_2 12s 7.9s both ease-in-out infinite;
+
+                    @keyframes mushroom_2 {
+                        0% {
+                            top: 100vh;
+                            left: 20%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 20%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 20%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 20%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 20%;
+                            opacity: 0
+                        }
+                    }
+                }
+
+                .mushroom_1 {
+                    left: 30%;
+                    top: 62vh;
+                    animation: mushroom_1 12s 8s both ease-in-out infinite;
+
+                    @keyframes mushroom_1 {
+                        0% {
+                            top: 100vh;
+                            left: 30%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            left: 30%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        20% {
+                            left: 30%;
+                            top: 62vh;
+                            opacity: 1;
+                        }
+
+                        30% {
+                            top: 100vh;
+                            left: 30%;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            top: 100vh;
+                            left: 30%;
+                            opacity: 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        background-color: #e70112;
+        clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+main {
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        margin-bottom: 2vh;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        letter-spacing: .05rem;
+        margin: 1.2vh 0;
+    }
+
+    #news {
+        background-color: #e70112;
+
+        .list_box {
+            @include list_box();
+
+            .card_item {
+                position: relative;
+                flex: 1;
+                margin: 3rem;
+                padding: 2rem 2rem 4rem 2rem;
+                background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+                border-radius: 15px;
+                cursor: pointer;
+
+                &:hover .scenes {
+                    transform: perspective(600px) rotateX(30deg) skewX(-20deg);
+                }
+
+                .scenes {
+                    transition: all .5s;
+                    transform-origin: bottom;
+
+                    img {
+                        border-radius: 10px;
+                    }
+                }
+
+                &:hover .role {
+                    transform: scale(1.2) translateY(-20px);
+                }
+
+                .role {
+                    position: absolute;
+                    width: 60%;
+                    top: -5vh;
+                    left: 20%;
+                    transition: all .5s;
+                }
+
+                .date {
+                    font-size: 1.2rem;
+                    margin: 1.2vh 0;
+                }
+
+                &:hover .content {
+                    bottom: 2rem;
+                    opacity: 1;
+                }
+
+                .content {
+                    position: absolute;
+                    bottom: 6rem;
+                    font-size: 1.1rem;
+                    letter-spacing: .05rem;
+                    opacity: 0;
+                    transition: all .5s;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+            }
+        }
+
+        .news_link {
+            @include btn();
+            border: 2px solid transparent;
+            transition: all .3s;
+
+            &:hover {
+                background-color: black;
+                color: white;
+                border: 2px solid white;
+            }
+        }
+    }
+
+    #Mario_Kart {
+        background-image: url(../images/bg-pattern-logos.png), linear-gradient(0deg,#bc00b7,#23b2ff);
+
+        .Mario_Kart_img {
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        div {
+            margin: 2rem;
+            text-align: center;
+        }
+
+        a {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 2px solid white;
+            color: #2a2929;
+            background-color: #ffffff;
+            font-weight: 800;
+            transition: all .3s;
+            margin-bottom: 3rem;
+
+            &:hover {
+                color: #ffffff;
+                background-color: #2a2929;
+            }
+        }
+
+        .Mario_Kart_footer_img {
+            transform: scaleX(-1) scaleY(-1);
+        }
+    }
+
+    #switch {
+        background-color: #e70112;
+        position: relative;
+
+        .switch_title {
+            text-align: start;
+            margin: 3rem 0;
+
+            h2 {
+                margin: 0 0 0 -50rem;
+            }
+        }
+
+        .mario_background {
+            width: 50%;
+            position: absolute;
+            right: 5%;
+            top: -25%;
+        }
+
+        .star {
+            width: 12%;
+            position: absolute;
+            right: 10%;
+            top: 0;
+        }
+
+        .list_box {
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+            justify-items: center;
+
+            .card_item {
+                @include card_item();
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                &:hover .scenes {
+                    transform: scale(1.2);
+                }
+
+                .scenes {
+                    transition: all .5s;
+                    transform-origin: bottom;
+
+                    img {
+                        border-radius: 10px;
+                    }
+                }
+
+                &:hover .content {
+                    bottom: 2rem;
+                    opacity: 1;
+                }
+
+                .content {
+                    font-size: 1.1rem;
+                    letter-spacing: .05rem;
+                    position: absolute;
+                    bottom: 6rem;
+                    opacity: 0;
+                    transition: all .5s
+                }
+            }
+        }
+
+        a {
+            @include btn();
+            border: 2px solid transparent;
+            transition: all .3s;
+
+            &:hover {
+                background-color: black;
+                color: white;
+                border: 2px solid white;
+            }
+        }
+    }
+
+    #product {
+        background-image: url(../images/bg-pattern-logos.png), linear-gradient(225deg, #80ec87, #6df1c7 51%, #37cedd);
+        padding-bottom: 10rem;
+
+        h2 {
+            margin-bottom: 5rem
+        }
+
+        .list_box {
+            @include list_box();
+
+            .card_item {
+                @include card_item();
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                transition: all .5s;
+                // 3D效果
+                transform-style: preserve-3d;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px rgb(153, 153, 153);
+                }
+
+                .role {
+                    position: relative;
+                    width: 100%;
+                    height: 35vh;
+
+                    img {
+                        height: 120%;
+                        width: auto;
+                        position: absolute;
+                        top: -15vh;
+                        left: -10%
+                    }
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    line-height: 1.3rem;
+                    letter-spacing: .05rem
+                }
+
+                a {
+                    @include btn();
+                    margin-top: 2rem;
+                    border: 2px solid transparent;
+                    transition: all .3s;
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        border: 2px solid white;
+                    }
+                }
+            }
+
+            .role,
+            .content,
+            a {
+                // Z軸距離間距
+                transform: translateZ(50px);
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e60012;
+    height: 250px;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -190px;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        background-color: #e70112;
+        clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    a {
+        display: block;
+        width: 200px;
+        height: 48px;
+        line-height: 48px;
+        background-color: #ce0010;
+        margin: auto;
+        border-radius: 7px;
+        border: 2px solid white;
+        transition: all .5s;
+        font: {
+            size: 16px;
+            weight: 800;
+        }
+
+
+        &:hover {
+            background-color: white;
+            color: #ce0010;
+        }
+    }
+
+    p {
+        font-size: 12px;
+        padding:0 3rem 5rem 3rem;
+    }
+}

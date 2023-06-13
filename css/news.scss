@@ -1,0 +1,155 @@
+@import "./style.scss";
+
+.nav_section {
+    height: 100px;
+    position: static;
+    top: 0px;
+
+    .nav_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100px;
+        background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+
+        .nav_btn {
+
+            a:first-child {
+                border: 2px solid transparent;
+            }
+
+            a:nth-child(4) {
+                border: 2px solid white;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 0.8rem 1.8rem;
+                margin: 0 0.2rem;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                font-weight: 700;
+                transition: all .3s;
+                z-index: 0;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 100%;
+                    border-radius: 7px;
+                    background-color: #e60012;
+                    transition: all .3s;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    border: 2px solid white;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+main {
+    #news_item {
+        background-image: url(../images/bg-pattern-logos.png), linear-gradient(0deg, #bc00b7, #23b2ff);
+
+        .news_title {
+            font: {
+                size: 5rem;
+                weight: 900
+            }
+            background-color: #e70112;
+            width: 100%;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 170px;
+                z-index: 1;
+                width: 100%;
+                height: 200px;
+                background-color: #e70112;
+                clip-path: polygon(0 0, 100% 0, 100% 10%, 0 100%);
+            }
+        }
+
+        .list_box {
+            @include list_box();
+            z-index: 5;
+
+            .card_item {
+                @include card_item();
+
+                &:hover .scenes {
+                    transform: perspective(600px) rotateX(30deg) skewX(-20deg);
+                }
+
+                .scenes {
+                    transition: all .5s;
+                    transform-origin: bottom;
+
+                    img {
+                        border-radius: 10px;
+                    }
+                }
+
+                &:hover .role {
+                    transform: scale(1.2) translateY(-20px);
+                }
+
+                .role {
+                    position: absolute;
+                    width: 60%;
+                    top: -5vh;
+                    left: 20%;
+                    transition: all .5s;
+                }
+
+                .date {
+                    font-size: 1.2rem;
+                    margin: 1.2vh 0;
+                }
+
+                &:hover .content {
+                    bottom: 2rem;
+                    opacity: 1;
+                }
+
+                .content {
+                    position: absolute;
+                    bottom: 6rem;
+                    font-size: 1.1rem;
+                    letter-spacing: .05rem;
+                    opacity: 0;
+                    transition: all .5s;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+            }
+        }
+    }
+}

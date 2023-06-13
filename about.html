@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" href="./favicon-32x32.png">
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav_top">
+            <a href="#">
+                <img src="./images/nintendo-racetrack.svg" alt="#">
+            </a>
+            <div class="user">
+                <img src="./images/user.png" alt="#">
+                <p>Log in / Sign up</p>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav_section">
+        <div class="nav_item">
+            <div class="nav_btn">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="characters.html">Characters</a>
+                <a href="news.html">News</a>
+            </div>
+            <img src="./images/switch_log.svg" alt="#">
+        </div>
+    </nav>
+    <main>
+        <section id="about_mario">
+            <div class="text_box">
+                <h2>All about Mario</h2>
+                <p>Meet Mario, the mustached hero of the Mushroom Kingdom. You may know him as a famous plumber, but
+                    he’s also a kart racer, sports star, caped hero, and more! Using all his amazing abilities, he works
+                    with his friends to keep the Mushroom Kingdom safe.</p>
+            </div>
+            <img src="./images/mario_star.png" alt="">
+        </section>
+        <section id="power">
+            <h2>Power up!</h2>
+            <div class="power_item">
+                <div class="coins_item">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                </div>
+                <div class="slide_box">
+                    <img class="slide_img slide_1" src="./images/slide-1.jpg" alt="">
+                    <p class="power_name">Racoon Mario</p>
+                </div>
+                <img class="character_img character_1" src="./images/character-1.png" alt="">
+                <div class="coins_item-2">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                    <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
+                </div>
+            </div>
+            <div class="power_btn">
+                <div class="btn btn_1"><img src="./images/pagination-1.png" alt=""></div>
+                <div class="btn btn_2"><img src="./images/pagination-2.png" alt=""></div>
+                <div class="btn btn_3"><img src="./images/pagination-3.png" alt=""></div>
+                <div class="btn btn_4"><img src="./images/pagination-4.png" alt=""></div>
+                <div class="btn btn_5"><img src="./images/pagination-5.png" alt=""></div>
+            </div>
+        </section>
+        <section id="friend">
+            <img src="./images/wavy-line.png" alt="">
+            <div class="friend_item">
+                <div class="friend_text">
+                    <div class="text">
+                        <h2>Friends</h2>
+                        <h2>and foes</h2>
+                    </div>
+                    <a href="characters.html">Meet the characters　></a>
+                </div>
+                <img src="./images/character-group.png" alt="">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="#">
+            Customer support　>
+        </a>
+        <p>Game trademarks and copyrights are properties of their respective owners. Nintendo properties are
+            trademarks of Nintendo. © 2020 Nintendo.<br>
+            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and some
+            accessories sold separately.<br>
+            **Full version of game required to use DLC. Sold separately.</p>
+    </footer>
+
+    <script>
+        let slideImg = document.querySelector('.slide_img');
+        let characterImg = document.querySelector('.character_img');
+        let powerName = document.querySelector('.power_name');
+        let btn1 = document.querySelector('.btn_1');
+        let btn2 = document.querySelector('.btn_2');
+        let btn3 = document.querySelector('.btn_3');
+        let btn4 = document.querySelector('.btn_4');
+        let btn5 = document.querySelector('.btn_5');
+
+        btn1.onclick = () => {
+            slideImg.src = 'images/slide-1.jpg';
+            characterImg.src = 'images/character-1.png';
+            powerName.innerHTML = 'Racoon Mario';
+            btn1.style.backgroundColor = 'white';
+            btn1.style.transform = 'scale(1.1)';
+
+            btn2.style.backgroundColor = 'transparent';
+            btn2.style.transform = 'scale(1)';
+            btn3.style.backgroundColor = 'transparent';
+            btn3.style.transform = 'scale(1)';
+            btn4.style.backgroundColor = 'transparent';
+            btn4.style.transform = 'scale(1)';
+            btn5.style.backgroundColor = 'transparent';
+            btn5.style.transform = 'scale(1)';
+        }
+
+        btn2.onclick = () => {
+            slideImg.src = 'images/slide-2.jpg';
+            characterImg.src = 'images/character-2.png';
+            powerName.innerHTML = 'Cape Mario';
+            btn2.style.backgroundColor = 'white';
+            btn2.style.transform = 'scale(1.1)';
+
+            btn1.style.backgroundColor = 'transparent';
+            btn1.style.transform = 'scale(1)';
+            btn3.style.backgroundColor = 'transparent';
+            btn3.style.transform = 'scale(1)';
+            btn4.style.backgroundColor = 'transparent';
+            btn4.style.transform = 'scale(1)';
+            btn5.style.backgroundColor = 'transparent';
+            btn5.style.transform = 'scale(1)';
+        }
+
+        btn3.onclick = () => {
+            slideImg.src = 'images/slide-3.jpg';
+            characterImg.src = 'images/character-3.png';
+            powerName.innerHTML = 'Wing Mario';
+            btn3.style.backgroundColor = 'white';
+            btn3.style.transform = 'scale(1.1)';
+
+            btn1.style.backgroundColor = 'transparent';
+            btn1.style.transform = 'scale(1)';
+            btn2.style.backgroundColor = 'transparent';
+            btn2.style.transform = 'scale(1)';
+            btn4.style.backgroundColor = 'transparent';
+            btn4.style.transform = 'scale(1)';
+            btn5.style.backgroundColor = 'transparent';
+            btn5.style.transform = 'scale(1)';
+        }
+
+        btn4.onclick = () => {
+            slideImg.src = 'images/slide-4.jpg';
+            characterImg.src = 'images/character-4.png';
+            powerName.innerHTML = 'Bee Mario';
+            btn4.style.backgroundColor = 'white';
+            btn4.style.transform = 'scale(1.1)';
+
+            btn1.style.backgroundColor = 'transparent';
+            btn1.style.transform = 'scale(1)';
+            btn2.style.backgroundColor = 'transparent';
+            btn2.style.transform = 'scale(1)';
+            btn3.style.backgroundColor = 'transparent';
+            btn3.style.transform = 'scale(1)';
+            btn5.style.backgroundColor = 'transparent';
+            btn5.style.transform = 'scale(1)';
+        }
+
+        btn5.onclick = () => {
+            slideImg.src = 'images/slide-5.jpg';
+            characterImg.src = 'images/character-5.png';
+            powerName.innerHTML = 'Cat Mario';
+            btn5.style.backgroundColor = 'white';
+            btn5.style.transform = 'scale(1.1)';
+
+            btn1.style.backgroundColor = 'transparent';
+            btn1.style.transform = 'scale(1)';
+            btn2.style.backgroundColor = 'transparent';
+            btn2.style.transform = 'scale(1)';
+            btn3.style.backgroundColor = 'transparent';
+            btn3.style.transform = 'scale(1)';
+            btn4.style.backgroundColor = 'transparent';
+            btn4.style.transform = 'scale(1)';
+        }
+
+
+    </script>
+</body>
+
+</html>

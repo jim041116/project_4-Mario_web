@@ -1,0 +1,244 @@
+@import "./style.scss";
+
+.nav_section {
+    height: 100px;
+    position: static;
+    top: 0px;
+
+    .nav_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100px;
+        background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+
+        .nav_btn {
+
+            a:first-child {
+                border: 2px solid transparent;
+            }
+
+            a:nth-child(3) {
+                border: 2px solid white;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 0.8rem 1.8rem;
+                margin: 0 0.2rem;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                font-weight: 700;
+                transition: all .3s;
+                z-index: 0;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 100%;
+                    border-radius: 7px;
+                    background-color: #e60012;
+                    transition: all .3s;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    border: 2px solid white;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+header {
+    background-image: url(../images/bg-pattern-logos.png), linear-gradient(225deg,#80ec87,#6df1c7 51%,#37cedd);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+        clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .mario_img {
+        display: flex;
+        position: relative;
+        width: 70%;
+
+        img {
+            position: absolute;
+        }
+
+        .header-luigi {
+            width: 35%;
+            top: -25vh;
+            left: 20%;
+        }
+
+        .header-mario {
+            width: 40%;
+            top: -40vh;
+            left: 35%;
+        }
+    }
+
+    .text_box {
+        margin: -8rem 0 0 -15rem;
+        width: 30%;
+
+        h2 {
+            font-size: 5rem;
+            color: black;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 2rem;
+            color: black;
+        }
+    }
+}
+
+main {
+    width: 100%;
+
+    #characters {
+        background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+
+        .characters_item {
+            display: flex;
+            margin-bottom: 5rem;
+            width: 70%;
+            border-radius: 20px;
+            z-index: 99;
+            cursor: pointer;
+            position: relative;
+    
+            img {
+                width: 40%;
+            }
+    
+            .open_img {
+                margin-top: -5rem;
+                z-index: 99;
+                display: none;
+            }
+    
+            .characters_text {
+                padding: 2rem;
+    
+                .title {
+                    font: {
+                        size: 5rem;
+                        weight: 900;
+                    }
+                    margin-top: 5rem;
+                    transition: all .5s;
+                }
+    
+                .text {
+                    padding-right: 2rem;
+                    transition: all .5s;
+                    font-size: 1.2rem;
+                    position: absolute;
+                    visibility:hidden;
+                    top: -10rem;
+                    opacity: 0;
+    
+                    p {
+                        margin-bottom: 1rem;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+    
+        .mario {
+            background-image: url(../images/mario.gif);
+            margin-top: -10rem;
+        }
+    
+        .luigi {
+            background-image: url(../images/luigy.gif);
+        }
+    
+        .peach {
+            background-image: url(../images/peach.gif);
+        }
+    
+        .toad {
+            background-image: url(../images/toad.gif);
+        }
+    
+        .bowser {
+            background-image: url(../images/bowser.gif);
+        }
+    
+        .yoshi {
+            background-image: url(../images/yoshi.gif);
+        }
+    
+        .daisy {
+            background-image: url(../images/daisy.gif);
+        }
+    
+        .wario {
+            background-image: url(../images/wario.gif);
+        }
+    
+        .waluigi {
+            background-image: url(../images/waluigi.gif);
+        }
+    
+        .rosalina {
+            background-image: url(../images/rosalina.gif);
+        }
+    
+        .Bowser_Jr {
+            background-image: url(../images/bowser\ Jr..gif);
+        }
+    
+        .boo {
+            background-image: url(../images/boo.gif);
+        }
+    
+        .Donkey_Kong {
+            background-image: url(../images/Donkey_Kong.gif);
+        }
+    
+        .Diddy_Kong {
+            background-image: url(../images/Diddy_Kong.gif);
+            margin-bottom: 0;
+        }
+
+        .footer_characters {
+            width: 80%;
+        }
+    }
+}
