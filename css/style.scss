@@ -2,6 +2,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800;900&display=swap');
 
+@mixin pc() {
+    @media (max-width:1440px) {
+        @content;
+    }
+}
+
+@mixin pad() {
+    @media (max-width:992px) {
+        @content;
+    }
+}
+
+@mixin phone() {
+    @media (max-width:576px) {
+        @content;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +44,13 @@ $coloro_red: #e70112;
 
 @mixin btn {
     display: inline-block;
-    padding: 1.25rem 2.5rem;
+    // padding: 1.25rem 2.5rem;
+    width: 250px;
+    height: 80px;
     background-color: white;
     color: black;
+    line-height: 80px;
+    text-align: center;
     text-decoration: none;
     border-radius: 50px;
 
@@ -171,6 +193,11 @@ header {
         width: 80%;
         margin-top: -8rem;
 
+        @include pad() {
+            flex-direction: column;
+            margin-top: -20rem;
+        }
+
         .col:first-child {
             width: 28rem;
 
@@ -247,6 +274,41 @@ header {
                             ;
                         }
                     }
+
+                    @include pad() {
+                        @keyframes mario_1 {
+                            0% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 40vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 40vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                                ;
+                            }
+                        }
+                    }
                 }
 
                 .luigi {
@@ -287,6 +349,41 @@ header {
                             ;
                         }
                     }
+
+                    @include pad() {
+                        @keyframes luigi {
+                            0% {
+                                top: 100vh;
+                                right: 5%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 35vh;
+                                right: 5%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 35vh;
+                                right: 5%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 5%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 5%;
+                                opacity: 0;
+                                ;
+                            }
+                        }
+                    }
                 }
 
                 .brick {
@@ -324,6 +421,40 @@ header {
                             top: 10vh;
                             right: -100%;
                             opacity: 0;
+                        }
+                    }
+
+                    @include pad() {
+                        @keyframes brick {
+                            0% {
+                                top: 40vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 40vh;
+                                right: 8%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 40vh;
+                                right: 8%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 40vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 40vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
                         }
                     }
                 }
@@ -562,6 +693,40 @@ header {
                             opacity: 0;
                         }
                     }
+
+                    @include pad() {
+                        @keyframes mario_2 {
+                            0% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 40vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 40vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+                        }
+                    }
                 }
 
                 .peach {
@@ -601,6 +766,40 @@ header {
                             opacity: 0;
                         }
                     }
+
+                    @include pad() {
+                        @keyframes peach {
+                            0% {
+                                top: 100vh;
+                                right: 18%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 40vh;
+                                right: 18%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 40vh;
+                                right: 18%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 18%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 18%;
+                                opacity: 0;
+                            }
+                        }
+                    }
                 }
 
                 .pipe {
@@ -638,6 +837,40 @@ header {
                             top: 100vh;
                             right: 10%;
                             opacity: 0;
+                        }
+                    }
+
+                    @include pad() {
+                        @keyframes pipe {
+                            0% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 35vh;
+                                right: 10%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 35vh;
+                                right: 10%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
                         }
                     }
                 }
@@ -842,38 +1075,72 @@ header {
                 .mario_3 {
                     width: 30%;
                     top: 10vh;
-                    right: 32%;
+                    right: 20%;
                     animation: mario_3 12s 8s both ease-in-out infinite;
 
                     @keyframes mario_3 {
                         0% {
                             top: 100vh;
-                            right: 32%;
+                            right: 20%;
                             opacity: 0;
                         }
 
                         10% {
                             top: 10vh;
-                            right: 32%;
+                            right: 20%;
                             opacity: 1;
                         }
 
                         20% {
                             top: 10vh;
-                            right: 32%;
+                            right: 20%;
                             opacity: 1;
                         }
 
                         30% {
                             top: 100vh;
-                            right: 32%;
+                            right: 20%;
                             opacity: 0;
                         }
 
                         100% {
                             top: 100vh;
-                            right: 32%;
+                            right: 20%;
                             opacity: 0
+                        }
+                    }
+
+                    @include pad() {
+                        @keyframes mario_3 {
+                            0% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 40vh;
+                                right: 20%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 40vh;
+                                right: 20%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0
+                            }
                         }
                     }
                 }
@@ -881,38 +1148,72 @@ header {
                 .toad {
                     width: 10%;
                     top: 30vh;
-                    right: 29%;
+                    right: 19%;
                     animation: toad 12s 8.3s both ease-in-out infinite;
 
                     @keyframes toad {
                         0% {
                             top: 100vh;
-                            right: 29%;
+                            right: 19%;
                             opacity: 0;
                         }
 
                         10% {
                             top: 30vh;
-                            right: 29%;
+                            right: 19%;
                             opacity: 1;
                         }
 
                         20% {
                             top: 30vh;
-                            right: 29%;
+                            right: 19%;
                             opacity: 1;
                         }
 
                         30% {
                             top: 100vh;
-                            right: 29%;
+                            right: 19%;
                             opacity: 0;
                         }
 
                         100% {
                             top: 100vh;
-                            right: 29%;
+                            right: 19%;
                             opacity: 0;
+                        }
+                    }
+
+                    @include pad() {
+                        @keyframes toad {
+                            0% {
+                                top: 100vh;
+                                right: 19%;
+                                opacity: 0;
+                            }
+    
+                            10% {
+                                top: 45vh;
+                                right: 19%;
+                                opacity: 1;
+                            }
+    
+                            20% {
+                                top: 45vh;
+                                right: 19%;
+                                opacity: 1;
+                            }
+    
+                            30% {
+                                top: 100vh;
+                                right: 19%;
+                                opacity: 0;
+                            }
+    
+                            100% {
+                                top: 100vh;
+                                right: 19%;
+                                opacity: 0;
+                            }
                         }
                     }
                 }
@@ -920,7 +1221,7 @@ header {
                 .star {
                     width: 20%;
                     top: 0vh;
-                    right: 18%;
+                    right: 8%;
                     animation: star 12s 8.35s both ease-in-out infinite;
 
                     @keyframes star {
@@ -948,6 +1249,10 @@ header {
                             transform: scale(0);
                             opacity: 0;
                         }
+                    }
+
+                    @include pad() {
+                        top: 35vh;
                     }
                 }
 
@@ -1111,6 +1416,10 @@ main {
         .list_box {
             @include list_box();
 
+            @include pad() {
+                width: 95%;
+            }
+
             .card_item {
                 position: relative;
                 flex: 1;
@@ -1229,6 +1538,14 @@ main {
             h2 {
                 margin: 0 0 0 -50rem;
             }
+
+            @include pc() {
+                margin-left: 30%;
+            }
+
+            @include pad() {
+                margin:3rem 0 0 60rem;
+            }
         }
 
         .mario_background {
@@ -1236,6 +1553,15 @@ main {
             position: absolute;
             right: 5%;
             top: -25%;
+
+            @include pc() {
+                width: 40%;
+                top: -15%;
+            }
+            @include pad() {
+                // width: 40%;
+                top: 0%;
+            }
         }
 
         .star {
@@ -1243,6 +1569,11 @@ main {
             position: absolute;
             right: 10%;
             top: 0;
+
+            @include pad() {
+                right: 5%;
+                top: 2%;
+            }
         }
 
         .list_box {
@@ -1310,6 +1641,15 @@ main {
         .list_box {
             @include list_box();
 
+            @include pc() {
+                width: 90%;
+            }
+
+            @include pad() {
+                width: 80%;
+                flex-direction: column
+            }
+
             .card_item {
                 @include card_item();
                 display: flex;
@@ -1320,6 +1660,10 @@ main {
                 // 3D效果
                 transform-style: preserve-3d;
 
+                @include pad() {
+                    margin: 5rem;
+                }
+
                 &:hover {
                     box-shadow: 0px 0px 10px rgb(153, 153, 153);
                 }
@@ -1329,12 +1673,23 @@ main {
                     width: 100%;
                     height: 35vh;
 
+                    @include pad() {
+                        height: 8vh;
+                    }
+
                     img {
                         height: 120%;
                         width: auto;
                         position: absolute;
                         top: -15vh;
-                        left: -10%
+                        left: -10%;
+
+                        @include pad() {
+                            height: auto;
+                            width: 45%;
+                            left: 27.5%;
+                            top: -12vh;
+                        }
                     }
                 }
 
