@@ -116,6 +116,12 @@ header .row {
   width: 80%;
   margin-top: -8rem;
 }
+@media (max-width: 992px) {
+  header .row {
+    flex-direction: column;
+    margin-top: -20rem;
+  }
+}
 header .row .col:first-child {
   width: 28rem;
 }
@@ -131,9 +137,12 @@ header .row .col:first-child p {
 }
 header .row .col:first-child a {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
+  width: 250px;
+  height: 80px;
   background-color: white;
   color: black;
+  line-height: 80px;
+  text-align: center;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 800;
@@ -183,6 +192,35 @@ header .row .col:last-child .banner1 .mario_1 {
     opacity: 0;
   }
 }
+@media (max-width: 992px) {
+  @keyframes mario_1 {
+    0% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 25%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 25%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner1 .luigi {
   width: 20%;
   right: 5%;
@@ -216,6 +254,35 @@ header .row .col:last-child .banner1 .luigi {
     opacity: 0;
   }
 }
+@media (max-width: 992px) {
+  @keyframes luigi {
+    0% {
+      top: 100vh;
+      right: 5%;
+      opacity: 0;
+    }
+    10% {
+      top: 35vh;
+      right: 5%;
+      opacity: 1;
+    }
+    20% {
+      top: 35vh;
+      right: 5%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 5%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 5%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner1 .brick {
   width: 40%;
   right: 8%;
@@ -247,6 +314,35 @@ header .row .col:last-child .banner1 .brick {
     top: 10vh;
     right: -100%;
     opacity: 0;
+  }
+}
+@media (max-width: 992px) {
+  @keyframes brick {
+    0% {
+      top: 40vh;
+      right: -100%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 8%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 8%;
+      opacity: 1;
+    }
+    30% {
+      top: 40vh;
+      right: -100%;
+      opacity: 0;
+    }
+    100% {
+      top: 40vh;
+      right: -100%;
+      opacity: 0;
+    }
   }
 }
 header .row .col:last-child .banner1 .coins {
@@ -446,6 +542,35 @@ header .row .col:last-child .banner2 .mario_2 {
     opacity: 0;
   }
 }
+@media (max-width: 992px) {
+  @keyframes mario_2 {
+    0% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 25%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 25%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner2 .peach {
   width: 15%;
   top: 35vh;
@@ -479,6 +604,35 @@ header .row .col:last-child .banner2 .peach {
     opacity: 0;
   }
 }
+@media (max-width: 992px) {
+  @keyframes peach {
+    0% {
+      top: 100vh;
+      right: 18%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 18%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 18%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 18%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 18%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner2 .pipe {
   width: 15%;
   top: 15vh;
@@ -510,6 +664,35 @@ header .row .col:last-child .banner2 .pipe {
     top: 100vh;
     right: 10%;
     opacity: 0;
+  }
+}
+@media (max-width: 992px) {
+  @keyframes pipe {
+    0% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
+    10% {
+      top: 35vh;
+      right: 10%;
+      opacity: 1;
+    }
+    20% {
+      top: 35vh;
+      right: 10%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
   }
 }
 header .row .col:last-child .banner2 .block {
@@ -679,73 +862,131 @@ header .row .col:last-child .banner2 .block_1 {
 header .row .col:last-child .banner3 .mario_3 {
   width: 30%;
   top: 10vh;
-  right: 32%;
+  right: 20%;
   animation: mario_3 12s 8s both ease-in-out infinite;
 }
 @keyframes mario_3 {
   0% {
     top: 100vh;
-    right: 32%;
+    right: 20%;
     opacity: 0;
   }
   10% {
     top: 10vh;
-    right: 32%;
+    right: 20%;
     opacity: 1;
   }
   20% {
     top: 10vh;
-    right: 32%;
+    right: 20%;
     opacity: 1;
   }
   30% {
     top: 100vh;
-    right: 32%;
+    right: 20%;
     opacity: 0;
   }
   100% {
     top: 100vh;
-    right: 32%;
+    right: 20%;
     opacity: 0;
+  }
+}
+@media (max-width: 992px) {
+  @keyframes mario_3 {
+    0% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 20%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 20%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
   }
 }
 header .row .col:last-child .banner3 .toad {
   width: 10%;
   top: 30vh;
-  right: 29%;
+  right: 19%;
   animation: toad 12s 8.3s both ease-in-out infinite;
 }
 @keyframes toad {
   0% {
     top: 100vh;
-    right: 29%;
+    right: 19%;
     opacity: 0;
   }
   10% {
     top: 30vh;
-    right: 29%;
+    right: 19%;
     opacity: 1;
   }
   20% {
     top: 30vh;
-    right: 29%;
+    right: 19%;
     opacity: 1;
   }
   30% {
     top: 100vh;
-    right: 29%;
+    right: 19%;
     opacity: 0;
   }
   100% {
     top: 100vh;
-    right: 29%;
+    right: 19%;
     opacity: 0;
+  }
+}
+@media (max-width: 992px) {
+  @keyframes toad {
+    0% {
+      top: 100vh;
+      right: 19%;
+      opacity: 0;
+    }
+    10% {
+      top: 45vh;
+      right: 19%;
+      opacity: 1;
+    }
+    20% {
+      top: 45vh;
+      right: 19%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 19%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 19%;
+      opacity: 0;
+    }
   }
 }
 header .row .col:last-child .banner3 .star {
   width: 20%;
   top: 0vh;
-  right: 18%;
+  right: 8%;
   animation: star 12s 8.35s both ease-in-out infinite;
 }
 @keyframes star {
@@ -768,6 +1009,11 @@ header .row .col:last-child .banner3 .star {
   100% {
     transform: scale(0);
     opacity: 0;
+  }
+}
+@media (max-width: 992px) {
+  header .row .col:last-child .banner3 .star {
+    top: 35vh;
   }
 }
 header .row .col:last-child .banner3 .mushroom {
@@ -904,6 +1150,11 @@ main #news .list_box {
   display: flex;
   width: 75%;
 }
+@media (max-width: 992px) {
+  main #news .list_box {
+    width: 95%;
+  }
+}
 main #news .list_box .card_item {
   position: relative;
   flex: 1;
@@ -956,9 +1207,12 @@ main #news .list_box .card_item .content {
 }
 main #news .news_link {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
+  width: 250px;
+  height: 80px;
   background-color: white;
   color: black;
+  line-height: 80px;
+  text-align: center;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 800;
@@ -1009,6 +1263,17 @@ main #switch .switch_title {
 }
 main #switch .switch_title h2 {
   margin: 0 0 0 -50rem;
+  display: inline-block;
+}
+@media (max-width: 1440px) {
+  main #switch .switch_title {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 992px) {
+  main #switch .switch_title {
+    margin: 3rem 0 0 60rem;
+  }
 }
 main #switch .mario_background {
   width: 50%;
@@ -1016,11 +1281,28 @@ main #switch .mario_background {
   right: 5%;
   top: -25%;
 }
+@media (max-width: 1440px) {
+  main #switch .mario_background {
+    width: 40%;
+    top: -15%;
+  }
+}
+@media (max-width: 992px) {
+  main #switch .mario_background {
+    top: 0%;
+  }
+}
 main #switch .star {
   width: 12%;
   position: absolute;
   right: 10%;
   top: 0;
+}
+@media (max-width: 992px) {
+  main #switch .star {
+    right: 5%;
+    top: 2%;
+  }
 }
 main #switch .list_box {
   width: 90%;
@@ -1064,9 +1346,12 @@ main #switch .list_box .card_item .content {
 }
 main #switch a {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
+  width: 250px;
+  height: 80px;
   background-color: white;
   color: black;
+  line-height: 80px;
+  text-align: center;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 800;
@@ -1090,6 +1375,17 @@ main #product .list_box {
   display: flex;
   width: 75%;
 }
+@media (max-width: 1440px) {
+  main #product .list_box {
+    width: 90%;
+  }
+}
+@media (max-width: 992px) {
+  main #product .list_box {
+    width: 80%;
+    flex-direction: column;
+  }
+}
 main #product .list_box .card_item {
   position: relative;
   flex: 1;
@@ -1105,6 +1401,11 @@ main #product .list_box .card_item {
   transition: all 0.5s;
   transform-style: preserve-3d;
 }
+@media (max-width: 992px) {
+  main #product .list_box .card_item {
+    margin: 5rem;
+  }
+}
 main #product .list_box .card_item:hover {
   box-shadow: 0px 0px 10px rgb(153, 153, 153);
 }
@@ -1113,12 +1414,25 @@ main #product .list_box .card_item .role {
   width: 100%;
   height: 35vh;
 }
+@media (max-width: 992px) {
+  main #product .list_box .card_item .role {
+    height: 8vh;
+  }
+}
 main #product .list_box .card_item .role img {
   height: 120%;
   width: auto;
   position: absolute;
   top: -15vh;
   left: -10%;
+}
+@media (max-width: 992px) {
+  main #product .list_box .card_item .role img {
+    height: auto;
+    width: 45%;
+    left: 27.5%;
+    top: -12vh;
+  }
 }
 main #product .list_box .card_item p {
   font-size: 1.1rem;
@@ -1127,9 +1441,12 @@ main #product .list_box .card_item p {
 }
 main #product .list_box .card_item a {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
+  width: 250px;
+  height: 80px;
   background-color: white;
   color: black;
+  line-height: 80px;
+  text-align: center;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 800;
@@ -1360,9 +1677,12 @@ main #more_news .list_box .card_item .content {
 }
 main #more_news .news_link {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
+  width: 250px;
+  height: 80px;
   background-color: white;
   color: black;
+  line-height: 80px;
+  text-align: center;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 800;

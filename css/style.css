@@ -116,10 +116,10 @@ header .row {
   width: 80%;
   margin-top: -8rem;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   header .row {
     flex-direction: column;
-    margin-top: -20rem;
+    margin-top: -40%;
   }
 }
 header .row .col:first-child {
@@ -192,7 +192,7 @@ header .row .col:last-child .banner1 .mario_1 {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes mario_1 {
     0% {
       top: 100vh;
@@ -254,7 +254,7 @@ header .row .col:last-child .banner1 .luigi {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes luigi {
     0% {
       top: 100vh;
@@ -316,7 +316,7 @@ header .row .col:last-child .banner1 .brick {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes brick {
     0% {
       top: 40vh;
@@ -542,7 +542,7 @@ header .row .col:last-child .banner2 .mario_2 {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes mario_2 {
     0% {
       top: 100vh;
@@ -604,7 +604,7 @@ header .row .col:last-child .banner2 .peach {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes peach {
     0% {
       top: 100vh;
@@ -666,7 +666,7 @@ header .row .col:last-child .banner2 .pipe {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes pipe {
     0% {
       top: 100vh;
@@ -892,7 +892,7 @@ header .row .col:last-child .banner3 .mario_3 {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes mario_3 {
     0% {
       top: 100vh;
@@ -954,7 +954,7 @@ header .row .col:last-child .banner3 .toad {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   @keyframes toad {
     0% {
       top: 100vh;
@@ -1011,7 +1011,7 @@ header .row .col:last-child .banner3 .star {
     opacity: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   header .row .col:last-child .banner3 .star {
     top: 35vh;
   }
@@ -1150,9 +1150,14 @@ main #news .list_box {
   display: flex;
   width: 75%;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #news .list_box {
     width: 95%;
+  }
+}
+@media (max-width: 576px) {
+  main #news .list_box {
+    flex-direction: column;
   }
 }
 main #news .list_box .card_item {
@@ -1259,20 +1264,12 @@ main #switch {
 }
 main #switch .switch_title {
   text-align: start;
-  margin: 3rem 0;
+  position: absolute;
+  top: 8%;
+  left: 10%;
 }
 main #switch .switch_title h2 {
-  margin: 0 0 0 -50rem;
-}
-@media (max-width: 1440px) {
-  main #switch .switch_title {
-    margin-left: 30%;
-  }
-}
-@media (max-width: 992px) {
-  main #switch .switch_title {
-    margin: 3rem 0 0 60rem;
-  }
+  display: inline-block;
 }
 main #switch .mario_background {
   width: 50%;
@@ -1286,7 +1283,7 @@ main #switch .mario_background {
     top: -15%;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #switch .mario_background {
     top: 0%;
   }
@@ -1297,7 +1294,7 @@ main #switch .star {
   right: 10%;
   top: 0;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #switch .star {
     right: 5%;
     top: 2%;
@@ -1306,8 +1303,14 @@ main #switch .star {
 main #switch .list_box {
   width: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   justify-items: center;
+  margin-top: 15rem;
+}
+@media (max-width: 576px) {
+  main #switch .list_box {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 main #switch .list_box .card_item {
   position: relative;
@@ -1321,6 +1324,11 @@ main #switch .list_box .card_item {
   flex-direction: column;
   justify-content: space-around;
 }
+@media (max-width: 576px) {
+  main #switch .list_box .card_item {
+    padding: 1rem;
+  }
+}
 main #switch .list_box .card_item:hover .scenes {
   transform: scale(1.2);
 }
@@ -1331,9 +1339,11 @@ main #switch .list_box .card_item .scenes {
 main #switch .list_box .card_item .scenes img {
   border-radius: 10px;
 }
-main #switch .list_box .card_item:hover .content {
-  bottom: 2rem;
-  opacity: 1;
+@media (min-width: 576px) {
+  main #switch .list_box .card_item:hover .content {
+    bottom: 2rem;
+    opacity: 1;
+  }
 }
 main #switch .list_box .card_item .content {
   font-size: 1.1rem;
@@ -1379,7 +1389,7 @@ main #product .list_box {
     width: 90%;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #product .list_box {
     width: 80%;
     flex-direction: column;
@@ -1400,7 +1410,7 @@ main #product .list_box .card_item {
   transition: all 0.5s;
   transform-style: preserve-3d;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #product .list_box .card_item {
     margin: 5rem;
   }
@@ -1413,7 +1423,7 @@ main #product .list_box .card_item .role {
   width: 100%;
   height: 35vh;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #product .list_box .card_item .role {
     height: 8vh;
   }
@@ -1425,7 +1435,7 @@ main #product .list_box .card_item .role img {
   top: -15vh;
   left: -10%;
 }
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   main #product .list_box .card_item .role img {
     height: auto;
     width: 45%;

@@ -9,7 +9,7 @@
 }
 
 @mixin pad() {
-    @media (max-width:992px) {
+    @media (max-width:1024px) {
         @content;
     }
 }
@@ -195,7 +195,7 @@ header {
 
         @include pad() {
             flex-direction: column;
-            margin-top: -20rem;
+            margin-top: -40%;
         }
 
         .col:first-child {
@@ -282,25 +282,25 @@ header {
                                 right: 25%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 40vh;
                                 right: 25%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 40vh;
                                 right: 25%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 25%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 25%;
@@ -357,25 +357,25 @@ header {
                                 right: 5%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 35vh;
                                 right: 5%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 35vh;
                                 right: 5%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 5%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 5%;
@@ -431,25 +431,25 @@ header {
                                 right: -100%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 40vh;
                                 right: 8%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 40vh;
                                 right: 8%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 40vh;
                                 right: -100%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 40vh;
                                 right: -100%;
@@ -701,25 +701,25 @@ header {
                                 right: 25%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 40vh;
                                 right: 25%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 40vh;
                                 right: 25%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 25%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 25%;
@@ -774,25 +774,25 @@ header {
                                 right: 18%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 40vh;
                                 right: 18%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 40vh;
                                 right: 18%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 18%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 18%;
@@ -847,25 +847,25 @@ header {
                                 right: 10%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 35vh;
                                 right: 10%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 35vh;
                                 right: 10%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 10%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 10%;
@@ -1117,25 +1117,25 @@ header {
                                 right: 20%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 40vh;
                                 right: 20%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 40vh;
                                 right: 20%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 20%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 20%;
@@ -1190,25 +1190,25 @@ header {
                                 right: 19%;
                                 opacity: 0;
                             }
-    
+
                             10% {
                                 top: 45vh;
                                 right: 19%;
                                 opacity: 1;
                             }
-    
+
                             20% {
                                 top: 45vh;
                                 right: 19%;
                                 opacity: 1;
                             }
-    
+
                             30% {
                                 top: 100vh;
                                 right: 19%;
                                 opacity: 0;
                             }
-    
+
                             100% {
                                 top: 100vh;
                                 right: 19%;
@@ -1419,6 +1419,9 @@ main {
             @include pad() {
                 width: 95%;
             }
+            @include phone() {
+                flex-direction: column;
+            }
 
             .card_item {
                 position: relative;
@@ -1494,7 +1497,7 @@ main {
     }
 
     #Mario_Kart {
-        background-image: url(../images/bg-pattern-logos.png), linear-gradient(0deg,#bc00b7,#23b2ff);
+        background-image: url(../images/bg-pattern-logos.png), linear-gradient(0deg, #bc00b7, #23b2ff);
 
         .Mario_Kart_img {
             width: 60%;
@@ -1533,18 +1536,21 @@ main {
 
         .switch_title {
             text-align: start;
-            margin: 3rem 0;
+            position: absolute;
+            top: 8%;
+            left: 10%;
 
             h2 {
-                margin: 0 0 0 -50rem;
+                // margin-left: -130%;
+                display: inline-block;
             }
 
             @include pc() {
-                margin-left: 30%;
+                // margin-left: 30%;
             }
 
             @include pad() {
-                margin:3rem 0 0 60rem;
+                // margin: 3rem 0 0 60rem;
             }
         }
 
@@ -1558,6 +1564,7 @@ main {
                 width: 40%;
                 top: -15%;
             }
+
             @include pad() {
                 // width: 40%;
                 top: 0%;
@@ -1579,14 +1586,23 @@ main {
         .list_box {
             width: 90%;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             justify-items: center;
+            margin-top: 15rem;
+
+            @include phone() {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
 
             .card_item {
                 @include card_item();
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+
+                @include phone() {
+                    padding: 1rem;
+                }
 
                 &:hover .scenes {
                     transform: scale(1.2);
@@ -1601,9 +1617,11 @@ main {
                     }
                 }
 
-                &:hover .content {
-                    bottom: 2rem;
-                    opacity: 1;
+                @media (min-width: 576px) {
+                    &:hover .content {
+                        bottom: 2rem;
+                        opacity: 1;
+                    }
                 }
 
                 .content {
@@ -1755,6 +1773,7 @@ footer {
         border-radius: 7px;
         border: 2px solid white;
         transition: all .5s;
+
         font: {
             size: 16px;
             weight: 800;
@@ -1769,6 +1788,6 @@ footer {
 
     p {
         font-size: 12px;
-        padding:0 3rem 5rem 3rem;
+        padding: 0 3rem 5rem 3rem;
     }
 }
