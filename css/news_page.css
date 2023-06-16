@@ -55,6 +55,11 @@ img {
   position: static;
   top: 0px;
 }
+@media (max-width: 576px) {
+  .nav_section {
+    height: 50px;
+  }
+}
 .nav_section .nav_item {
   display: flex;
   align-items: center;
@@ -62,6 +67,16 @@ img {
   position: relative;
   height: 100px;
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item {
+    height: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .nav_btn {
+    display: none;
+  }
 }
 .nav_section .nav_item .nav_btn a:first-child {
   border: 2px solid white;
@@ -95,11 +110,120 @@ img {
 .nav_section .nav_item .nav_btn a:hover::before {
   width: 100%;
 }
+.nav_section .nav_item .menu {
+  display: none;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  margin: 0 0.2rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s;
+  z-index: 0;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .menu {
+    display: block;
+  }
+}
+.nav_section .nav_item .menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #e60012;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.nav_section .nav_item .menu:hover {
+  border: 2px solid white;
+}
+.nav_section .nav_item .menu:hover::before {
+  width: 100%;
+}
 .nav_section .nav_item img {
   width: 100px;
   position: absolute;
   top: 0;
   right: 0;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item img {
+    width: 50px;
+  }
+}
+
+.phone_nav_btn {
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+  overflow: hidden;
+  transform: translateY(-100vh);
+  transition: all 0.5s;
+  visibility: hidden;
+}
+.phone_nav_btn a {
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  margin: 1rem 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s;
+  z-index: 0;
+  position: relative;
+}
+.phone_nav_btn a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #e60012;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.phone_nav_btn a:hover {
+  border: 2px solid white;
+}
+.phone_nav_btn a:hover::before {
+  width: 100%;
+}
+.phone_nav_btn img {
+  width: 30%;
+  transform: translateY(100px);
+  transition: all 0.5s;
+}
+
+.active {
+  visibility: visible;
+  transform: translateY(0vh);
+  position: fixed;
+}
+
+.active img {
+  animation: move 1s 0.5s both;
+}
+@keyframes move {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 header {
@@ -119,21 +243,47 @@ header .row {
 @media (max-width: 992px) {
   header .row {
     flex-direction: column;
-    margin-top: -20rem;
+    margin-top: -40%;
+  }
+}
+@media (max-width: 576px) {
+  header .row {
+    margin-top: -50%;
   }
 }
 header .row .col:first-child {
-  width: 28rem;
+  width: 50%;
+}
+@media (max-width: 576px) {
+  header .row .col:first-child {
+    width: 100%;
+  }
 }
 header .row .col:first-child h2 span:first-child {
   font-size: 1.75rem;
 }
+@media (max-width: 576px) {
+  header .row .col:first-child h2 span:first-child {
+    font-size: 1.3rem;
+  }
+}
 header .row .col:first-child h2 span:last-child {
   font-size: 11rem;
+}
+@media (max-width: 576px) {
+  header .row .col:first-child h2 span:last-child {
+    font-size: 3rem;
+  }
 }
 header .row .col:first-child p {
   font-size: 1.3rem;
   line-height: 2rem;
+}
+@media (max-width: 576px) {
+  header .row .col:first-child p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 header .row .col:first-child a {
   display: inline-block;
@@ -156,6 +306,22 @@ header .row .col:first-child a:hover {
   color: white;
   border: 2px solid white;
 }
+@media (max-width: 576px) {
+  header .row .col:first-child a {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
 header .row .col:last-child picture {
   position: absolute;
 }
@@ -164,6 +330,11 @@ header .row .col:last-child .banner1 .mario_1 {
   top: 100vh;
   right: 25%;
   animation: mario_1 12s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner1 .mario_1 {
+    width: 30%;
+  }
 }
 @keyframes mario_1 {
   0% {
@@ -221,11 +392,45 @@ header .row .col:last-child .banner1 .mario_1 {
     }
   }
 }
+@media (max-width: 576px) {
+  @keyframes mario_1 {
+    0% {
+      top: 100vh;
+      right: 45%;
+      opacity: 0;
+    }
+    10% {
+      top: 45vh;
+      right: 45%;
+      opacity: 1;
+    }
+    20% {
+      top: 45vh;
+      right: 45%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 45%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 45%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner1 .luigi {
   width: 20%;
   right: 5%;
   top: 20vh;
   animation: luigi 12s 0.3s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner1 .luigi {
+    width: 30%;
+  }
 }
 @keyframes luigi {
   0% {
@@ -283,11 +488,45 @@ header .row .col:last-child .banner1 .luigi {
     }
   }
 }
+@media (max-width: 576px) {
+  @keyframes luigi {
+    0% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 20%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
+      right: 20%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 20%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner1 .brick {
   width: 40%;
   right: 8%;
   top: 10vh;
   animation: brick 12s 0.4s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner1 .brick {
+    width: 60%;
+  }
 }
 @keyframes brick {
   0% {
@@ -340,6 +579,35 @@ header .row .col:last-child .banner1 .brick {
     }
     100% {
       top: 40vh;
+      right: -100%;
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 576px) {
+  @keyframes brick {
+    0% {
+      top: 50vh;
+      right: -100%;
+      opacity: 0;
+    }
+    10% {
+      top: 50vh;
+      right: 8%;
+      opacity: 1;
+    }
+    20% {
+      top: 50vh;
+      right: 8%;
+      opacity: 1;
+    }
+    30% {
+      top: 50vh;
+      right: -100%;
+      opacity: 0;
+    }
+    100% {
+      top: 50vh;
       right: -100%;
       opacity: 0;
     }
@@ -571,11 +839,45 @@ header .row .col:last-child .banner2 .mario_2 {
     }
   }
 }
+@media (max-width: 576px) {
+  @keyframes mario_2 {
+    0% {
+      top: 100vh;
+      right: 40%;
+      opacity: 0;
+    }
+    10% {
+      top: 45vh;
+      right: 40%;
+      opacity: 1;
+    }
+    20% {
+      top: 45vh;
+      right: 40%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 40%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 40%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner2 .peach {
   width: 15%;
   top: 35vh;
   right: 18%;
   animation: peach 12s 4.3s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner2 .peach {
+    width: 25%;
+  }
 }
 @keyframes peach {
   0% {
@@ -633,11 +935,45 @@ header .row .col:last-child .banner2 .peach {
     }
   }
 }
+@media (max-width: 576px) {
+  @keyframes peach {
+    0% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    10% {
+      top: 45vh;
+      right: 25%;
+      opacity: 1;
+    }
+    20% {
+      top: 45vh;
+      right: 25%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 25%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner2 .pipe {
   width: 15%;
   top: 15vh;
   right: 10%;
   animation: pipe 12s 4.4s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner2 .pipe {
+    width: 20%;
+  }
 }
 @keyframes pipe {
   0% {
@@ -680,6 +1016,35 @@ header .row .col:last-child .banner2 .pipe {
     }
     20% {
       top: 35vh;
+      right: 10%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 576px) {
+  @keyframes pipe {
+    0% {
+      top: 100vh;
+      right: 10%;
+      opacity: 0;
+    }
+    10% {
+      top: 40vh;
+      right: 10%;
+      opacity: 1;
+    }
+    20% {
+      top: 40vh;
       right: 10%;
       opacity: 1;
     }
@@ -865,6 +1230,11 @@ header .row .col:last-child .banner3 .mario_3 {
   right: 20%;
   animation: mario_3 12s 8s both ease-in-out infinite;
 }
+@media (max-width: 576px) {
+  header .row .col:last-child .banner3 .mario_3 {
+    width: 45%;
+  }
+}
 @keyframes mario_3 {
   0% {
     top: 100vh;
@@ -921,11 +1291,45 @@ header .row .col:last-child .banner3 .mario_3 {
     }
   }
 }
+@media (max-width: 576px) {
+  @keyframes mario_3 {
+    0% {
+      top: 100vh;
+      right: 30%;
+      opacity: 0;
+    }
+    10% {
+      top: 45vh;
+      right: 30%;
+      opacity: 1;
+    }
+    20% {
+      top: 45vh;
+      right: 30%;
+      opacity: 1;
+    }
+    30% {
+      top: 100vh;
+      right: 30%;
+      opacity: 0;
+    }
+    100% {
+      top: 100vh;
+      right: 30%;
+      opacity: 0;
+    }
+  }
+}
 header .row .col:last-child .banner3 .toad {
   width: 10%;
   top: 30vh;
   right: 19%;
   animation: toad 12s 8.3s both ease-in-out infinite;
+}
+@media (max-width: 576px) {
+  header .row .col:last-child .banner3 .toad {
+    width: 20%;
+  }
 }
 @keyframes toad {
   0% {
@@ -1127,6 +1531,11 @@ header::before {
   background-color: #e70112;
   clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
 }
+@media (max-width: 375px) {
+  header::before {
+    height: 50px;
+  }
+}
 
 main section {
   display: flex;
@@ -1137,6 +1546,12 @@ main section {
 main h2 {
   font-size: 3.5rem;
   margin-bottom: 2vh;
+}
+@media (max-width: 576px) {
+  main h2 {
+    font-size: 2rem;
+    margin: 4rem 0 2rem 0;
+  }
 }
 main h3 {
   font-size: 1.5rem;
@@ -1155,6 +1570,11 @@ main #news .list_box {
     width: 95%;
   }
 }
+@media (max-width: 576px) {
+  main #news .list_box {
+    flex-direction: column;
+  }
+}
 main #news .list_box .card_item {
   position: relative;
   flex: 1;
@@ -1163,6 +1583,11 @@ main #news .list_box .card_item {
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
   border-radius: 15px;
   cursor: pointer;
+}
+@media (max-width: 576px) {
+  main #news .list_box .card_item {
+    padding: 1rem;
+  }
 }
 main #news .list_box .card_item:hover .scenes {
   transform: perspective(600px) rotateX(30deg) skewX(-20deg);
@@ -1219,6 +1644,17 @@ main #news .news_link {
   font-size: 1.3rem;
   border: 2px solid transparent;
   transition: all 0.3s;
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
 }
 main #news .news_link:hover {
   background-color: black;
@@ -1259,20 +1695,26 @@ main #switch {
 }
 main #switch .switch_title {
   text-align: start;
-  margin: 3rem 0;
+  position: absolute;
+  top: 5%;
+  left: 10%;
 }
 main #switch .switch_title h2 {
-  margin: 0 0 0 -50rem;
   display: inline-block;
 }
-@media (max-width: 1440px) {
-  main #switch .switch_title {
-    margin-left: 30%;
+@media (max-width: 576px) {
+  main #switch .switch_title h2 {
+    margin: 0;
   }
 }
 @media (max-width: 992px) {
   main #switch .switch_title {
-    margin: 3rem 0 0 60rem;
+    top: 3%;
+  }
+}
+@media (max-width: 576px) {
+  main #switch .switch_title {
+    top: 8%;
   }
 }
 main #switch .mario_background {
@@ -1292,6 +1734,11 @@ main #switch .mario_background {
     top: 0%;
   }
 }
+@media (max-width: 992px) {
+  main #switch .mario_background {
+    top: -4%;
+  }
+}
 main #switch .star {
   width: 12%;
   position: absolute;
@@ -1304,11 +1751,23 @@ main #switch .star {
     top: 2%;
   }
 }
+@media (max-width: 992px) {
+  main #switch .star {
+    top: -1%;
+  }
+}
 main #switch .list_box {
   width: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   justify-items: center;
+  margin-top: 15rem;
+}
+@media (max-width: 576px) {
+  main #switch .list_box {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 10rem;
+  }
 }
 main #switch .list_box .card_item {
   position: relative;
@@ -1322,6 +1781,11 @@ main #switch .list_box .card_item {
   flex-direction: column;
   justify-content: space-around;
 }
+@media (max-width: 576px) {
+  main #switch .list_box .card_item {
+    padding: 1rem;
+  }
+}
 main #switch .list_box .card_item:hover .scenes {
   transform: scale(1.2);
 }
@@ -1332,9 +1796,11 @@ main #switch .list_box .card_item .scenes {
 main #switch .list_box .card_item .scenes img {
   border-radius: 10px;
 }
-main #switch .list_box .card_item:hover .content {
-  bottom: 2rem;
-  opacity: 1;
+@media (min-width: 576px) {
+  main #switch .list_box .card_item:hover .content {
+    bottom: 2rem;
+    opacity: 1;
+  }
 }
 main #switch .list_box .card_item .content {
   font-size: 1.1rem;
@@ -1406,6 +1872,11 @@ main #product .list_box .card_item {
     margin: 5rem;
   }
 }
+@media (max-width: 576px) {
+  main #product .list_box .card_item {
+    margin: 5rem 0;
+  }
+}
 main #product .list_box .card_item:hover {
   box-shadow: 0px 0px 10px rgb(153, 153, 153);
 }
@@ -1434,6 +1905,13 @@ main #product .list_box .card_item .role img {
     top: -12vh;
   }
 }
+@media (max-width: 576px) {
+  main #product .list_box .card_item .role img {
+    width: 70%;
+    left: 15%;
+    top: -18vh;
+  }
+}
 main #product .list_box .card_item p {
   font-size: 1.1rem;
   line-height: 1.3rem;
@@ -1454,6 +1932,21 @@ main #product .list_box .card_item a {
   margin-top: 2rem;
   border: 2px solid transparent;
   transition: all 0.3s;
+}
+@media (max-width: 576px) {
+  main #product .list_box .card_item a {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+  }
 }
 main #product .list_box .card_item a:hover {
   background-color: black;
@@ -1514,6 +2007,11 @@ footer p {
   position: static;
   top: 0px;
 }
+@media (max-width: 576px) {
+  .nav_section {
+    height: 50px;
+  }
+}
 .nav_section .nav_item {
   display: flex;
   align-items: center;
@@ -1522,8 +2020,18 @@ footer p {
   height: 100px;
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
 }
+@media (max-width: 576px) {
+  .nav_section .nav_item {
+    height: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .nav_btn {
+    display: none;
+  }
+}
 .nav_section .nav_item .nav_btn a:first-child {
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 .nav_section .nav_item .nav_btn a {
   text-decoration: none;
@@ -1554,11 +2062,51 @@ footer p {
 .nav_section .nav_item .nav_btn a:hover::before {
   width: 100%;
 }
+.nav_section .nav_item .menu {
+  display: none;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  margin: 0 0.2rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s;
+  z-index: 0;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .menu {
+    display: block;
+  }
+}
+.nav_section .nav_item .menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #e60012;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.nav_section .nav_item .menu:hover {
+  border: 2px solid white;
+}
+.nav_section .nav_item .menu:hover::before {
+  width: 100%;
+}
 .nav_section .nav_item img {
   width: 100px;
   position: absolute;
   top: 0;
   right: 0;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item img {
+    width: 50px;
+  }
 }
 
 main {
@@ -1580,13 +2128,23 @@ main::before {
 }
 main #news_page {
   width: 40%;
-  margin-left: 30%;
+  margin: auto;
   margin-bottom: 5rem;
+}
+@media (max-width: 992px) {
+  main #news_page {
+    width: 80%;
+  }
 }
 main #news_page .news_title {
   font-weight: 900;
   padding: 3rem;
   text-align: start;
+}
+@media (max-width: 576px) {
+  main #news_page .news_title {
+    padding: 1rem;
+  }
 }
 main #news_page .news_title p {
   font-size: 1.2rem;
@@ -1625,6 +2183,16 @@ main #more_news .list_box {
   z-index: 5;
   width: 30%;
 }
+@media (max-width: 992px) {
+  main #more_news .list_box {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  main #more_news .list_box {
+    width: 80%;
+  }
+}
 main #more_news .list_box .card_item {
   position: relative;
   flex: 1;
@@ -1633,6 +2201,11 @@ main #more_news .list_box .card_item {
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
   border-radius: 15px;
   cursor: pointer;
+}
+@media (max-width: 992px) {
+  main #more_news .list_box .card_item {
+    padding: 1rem;
+  }
 }
 main #more_news .list_box .card_item:hover .scenes {
   transform: perspective(600px) rotateX(30deg) skewX(-20deg);
@@ -1658,9 +2231,11 @@ main #more_news .list_box .card_item .date {
   font-size: 1.2rem;
   margin: 1.2vh 0;
 }
-main #more_news .list_box .card_item:hover .content {
-  bottom: 2rem;
-  opacity: 1;
+@media (min-width: 552px) {
+  main #more_news .list_box .card_item:hover .content {
+    bottom: 2rem;
+    opacity: 1;
+  }
 }
 main #more_news .list_box .card_item .content {
   position: absolute;
@@ -1690,6 +2265,21 @@ main #more_news .news_link {
   border: 2px solid transparent;
   transition: all 0.3s;
   margin-bottom: 10rem;
+}
+@media (max-width: 576px) {
+  main #more_news .news_link {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+  }
 }
 main #more_news .news_link:hover {
   background-color: black;

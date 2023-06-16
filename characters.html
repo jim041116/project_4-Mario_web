@@ -30,9 +30,20 @@
                 <a href="characters.html">Characters</a>
                 <a href="news.html">News</a>
             </div>
+            <div class="menu">
+                Menu
+            </div>
             <img src="./images/switch_log.svg" alt="#">
         </div>
     </nav>
+    <div class="phone_nav_btn">
+        <a href="">Back</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="characters.html">Characters</a>
+        <a href="news.html">News</a>
+        <img src="./images/banner1-mario.png" alt="">
+    </div>
     <header>
         <div class="mario_img">
             <img class="header-luigi" src="./images/header-luigi.png" alt="">
@@ -571,6 +582,19 @@
                 Diddy_KongTitle.style.marginTop = '1rem';
             }
         }
+
+                // 手機版menu
+                let menu = document.querySelector('.menu');
+        let phoneNavBtn = document.querySelector('.phone_nav_btn');
+
+        menu.onclick = () => {
+            if(phoneNavBtn.classList.contains('active')){
+                phoneNavBtn.classList.remove('active');
+            }else{
+                phoneNavBtn.classList.add('active');
+            }
+        }
+
 
     </script>
 </body>

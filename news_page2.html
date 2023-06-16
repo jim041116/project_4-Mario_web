@@ -30,9 +30,20 @@
                 <a href="characters.html">Characters</a>
                 <a href="news.html">News</a>
             </div>
+            <div class="menu">
+                Menu
+            </div>
             <img src="./images/switch_log.svg" alt="#">
         </div>
     </nav>
+    <div class="phone_nav_btn">
+        <a href="">Back</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="characters.html">Characters</a>
+        <a href="news.html">News</a>
+        <img src="./images/banner1-mario.png" alt="">
+    </div>
     <main>
         <section id="news_page">
             <div class="news_title">
@@ -40,19 +51,28 @@
                 <h3>Have a smashing time in the Bowser Tour</h3>
             </div>
             <img class="img_1" src="./images/BowserTour.avif" alt="">
-            <p>Behold the King of the Koopas with the Bowser Tour, the latest limited-time event in the Mario Kart Tour game, happening now!</p>
-            <p>Careen through a blazing blend of Bowser-inspired stomping grounds, including new course variants GBA Bowser's Castle 4, SNES Bowser Castle 3, and RMX Bowser's Castle 1R/T.</p>
+            <p>Behold the King of the Koopas with the Bowser Tour, the latest limited-time event in the Mario Kart Tour
+                game, happening now!</p>
+            <p>Careen through a blazing blend of Bowser-inspired stomping grounds, including new course variants GBA
+                Bowser's Castle 4, SNES Bowser Castle 3, and RMX Bowser's Castle 1R/T.</p>
             <img class="img_2" src="./images/Gsfc_BowserCastle3_BG02.avif" alt="">
-            <p>Give a whirl to the new Black Jungle Bell, Gold Sushi Racer, and Dry Bones Dasher karts as well as the Gold Manta Glider and Roy Oilpaper gliders.</p>
-            <p>If you’re feeling mischievous, you can cause karting chaos with a collection of balloons and Mii™ Racing Suits inspired by Bowser and the Koopalings!</p>
+            <p>Give a whirl to the new Black Jungle Bell, Gold Sushi Racer, and Dry Bones Dasher karts as well as the
+                Gold Manta Glider and Roy Oilpaper gliders.</p>
+            <p>If you’re feeling mischievous, you can cause karting chaos with a collection of balloons and Mii™ Racing
+                Suits inspired by Bowser and the Koopalings!</p>
             <strong>The Bowser Tour runs from now until May 16, 2023 at 10:59 p.m. PT. Rock on!</strong>
             <h2>Download & dive in</h2>
             <h2>About Mario Kart Tour</h2>
-            <p>In the free-to-start Mario Kart Tour game, players can put the pedal to the metal in courses inspired by real-world locations as well as Mario Kart series favorites. Put powerful items to use as you tear up the track and go for a high score in endless racing fun. Collect and upgrade a variety of drivers, karts, and gliders to find the combo that will lead you to victory!</p>
-            <p>City courses, special in-game event courses inspired by real-world locations, will be available during specific time periods and take place every two weeks.</p>
+            <p>In the free-to-start Mario Kart Tour game, players can put the pedal to the metal in courses inspired by
+                real-world locations as well as Mario Kart series favorites. Put powerful items to use as you tear up
+                the track and go for a high score in endless racing fun. Collect and upgrade a variety of drivers,
+                karts, and gliders to find the combo that will lead you to victory!</p>
+            <p>City courses, special in-game event courses inspired by real-world locations, will be available during
+                specific time periods and take place every two weeks.</p>
             <p>For more information about the Mario Kart Tour game, visit the official site: https://mariokarttour.com/
             </p>
-            <small>Free to start; optional in-game purchases available. Persistent internet, compatible smart device, and Nintendo Account required. Data charges may apply. Terms apply. See game for details.</small>
+            <small>Free to start; optional in-game purchases available. Persistent internet, compatible smart device,
+                and Nintendo Account required. Data charges may apply. Terms apply. See game for details.</small>
         </section>
         <section id="more_news">
             <div class="list_box">
@@ -82,6 +102,20 @@
             accessories sold separately.<br>
             **Full version of game required to use DLC. Sold separately.</p>
     </footer>
+
+    <script>
+        // 手機版menu
+        let menu = document.querySelector('.menu');
+        let phoneNavBtn = document.querySelector('.phone_nav_btn');
+
+        menu.onclick = () => {
+            if (phoneNavBtn.classList.contains('active')) {
+                phoneNavBtn.classList.remove('active');
+            } else {
+                phoneNavBtn.classList.add('active');
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 }
 
 @mixin pad() {
-    @media (max-width:1024px) {
+    @media (max-width:992px) {
         @content;
     }
 }
@@ -44,7 +44,6 @@ $coloro_red: #e70112;
 
 @mixin btn {
     display: inline-block;
-    // padding: 1.25rem 2.5rem;
     width: 250px;
     height: 80px;
     background-color: white;
@@ -57,6 +56,23 @@ $coloro_red: #e70112;
     font: {
         weight: 800;
         size: 1.3rem;
+    }
+}
+
+@mixin phone_btn {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+
+    font: {
+        weight: 800;
+        size: 1rem;
     }
 }
 
@@ -120,6 +136,10 @@ $coloro_red: #e70112;
     position: static;
     top: 0px;
 
+    @include phone() {
+        height: 50px;
+    }
+
     .nav_item {
         display: flex;
         align-items: center;
@@ -128,7 +148,14 @@ $coloro_red: #e70112;
         height: 100px;
         background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
 
+        @include phone() {
+            height: 50px;
+        }
+
         .nav_btn {
+            @include phone() {
+                display: none;
+            }
 
             a:first-child {
                 border: 2px solid white;
@@ -168,12 +195,124 @@ $coloro_red: #e70112;
             }
         }
 
+        .menu {
+            display: none;
+            text-decoration: none;
+            padding: 0.8rem 1.8rem;
+            margin: 0 0.2rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all .3s;
+            z-index: 0;
+            position: relative;
+            cursor: pointer;
+
+            @include phone() {
+                display: block;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                border-radius: 7px;
+                background-color: #e60012;
+                transition: all .3s;
+                z-index: -1;
+            }
+
+            &:hover {
+                border: 2px solid white;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+
         img {
             width: 100px;
             position: absolute;
             top: 0;
             right: 0;
+
+            @include phone() {
+                width: 50px;
+            }
         }
+    }
+}
+
+.phone_nav_btn {
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+    overflow: hidden;
+    transform: translateY(-100vh);
+    transition: all .5s;
+    visibility: hidden;
+
+    a {
+        text-decoration: none;
+        padding: 0.8rem 1.8rem;
+        margin: 1rem 0;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        font-weight: 700;
+        transition: all .3s;
+        z-index: 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            border-radius: 7px;
+            background-color: #e60012;
+            transition: all .3s;
+            z-index: -1;
+        }
+
+        &:hover {
+            border: 2px solid white;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+    }
+
+    img {
+        width: 30%;
+        transform: translateY(100px);
+        transition: all .5s;
+    }
+}
+
+.active {
+    visibility: visible;
+    transform: translateY(0vh);
+    position: fixed;
+}
+
+.active img {
+    animation: move 1s 0.5s both;
+    @keyframes move {
+        from {transform: translateY(100px);}
+        to {transform: translateY(0px);}
     }
 }
 
@@ -197,21 +336,41 @@ header {
             flex-direction: column;
             margin-top: -40%;
         }
+        @include phone() {
+            margin-top: -50%;;
+        }
 
         .col:first-child {
-            width: 28rem;
+            width: 50%;
+
+            @include phone() {
+                width: 100%;
+            }
 
             & h2 span:first-child {
                 font-size: 1.75rem;
+
+                @include phone() {
+                    font-size: 1.3rem;
+                }
             }
 
             & h2 span:last-child {
                 font-size: 11rem;
+
+                @include phone() {
+                    font-size: 3rem;
+                }
             }
 
             p {
                 font-size: 1.3rem;
                 line-height: 2rem;
+
+                @include phone() {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
             }
 
             a {
@@ -224,6 +383,11 @@ header {
                     background-color: black;
                     color: white;
                     border: 2px solid white;
+                }
+
+                @include phone() {
+                    @include phone_btn();
+                    margin-top: 1rem;
                 }
             }
 
@@ -241,6 +405,10 @@ header {
                     top: 100vh;
                     right: 25%;
                     animation: mario_1 12s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 30%;
+                    }
 
                     @keyframes mario_1 {
                         0% {
@@ -309,6 +477,40 @@ header {
                             }
                         }
                     }
+                    @include phone() {
+                        @keyframes mario_1 {
+                            0% {
+                                top: 100vh;
+                                right: 45%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 45vh;
+                                right: 45%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 45vh;
+                                right: 45%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 45%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 45%;
+                                opacity: 0;
+                                ;
+                            }
+                        }
+                    }
                 }
 
                 .luigi {
@@ -316,6 +518,10 @@ header {
                     right: 5%;
                     top: 20vh;
                     animation: luigi 12s .3s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 30%;
+                    }
 
                     @keyframes luigi {
                         0% {
@@ -384,6 +590,40 @@ header {
                             }
                         }
                     }
+                    @include phone() {
+                        @keyframes luigi {
+                            0% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 40vh;
+                                right: 20%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 40vh;
+                                right: 20%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 20%;
+                                opacity: 0;
+                                ;
+                            }
+                        }
+                    }
                 }
 
                 .brick {
@@ -391,6 +631,10 @@ header {
                     right: 8%;
                     top: 10vh;
                     animation: brick 12s .4s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 60%;
+                    }
 
                     @keyframes brick {
                         0% {
@@ -452,6 +696,39 @@ header {
 
                             100% {
                                 top: 40vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                    @include phone() {
+                        @keyframes brick {
+                            0% {
+                                top: 50vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 50vh;
+                                right: 8%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 50vh;
+                                right: 8%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 50vh;
+                                right: -100%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 50vh;
                                 right: -100%;
                                 opacity: 0;
                             }
@@ -727,6 +1004,39 @@ header {
                             }
                         }
                     }
+                    @include phone() {
+                        @keyframes mario_2 {
+                            0% {
+                                top: 100vh;
+                                right: 40%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 45vh;
+                                right: 40%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 45vh;
+                                right: 40%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 40%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 40%;
+                                opacity: 0;
+                            }
+                        }
+                    }
                 }
 
                 .peach {
@@ -734,6 +1044,10 @@ header {
                     top: 35vh;
                     right: 18%;
                     animation: peach 12s 4.3s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 25%;
+                    }
 
                     @keyframes peach {
                         0% {
@@ -800,6 +1114,39 @@ header {
                             }
                         }
                     }
+                    @include phone() {
+                        @keyframes peach {
+                            0% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 45vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 45vh;
+                                right: 25%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 25%;
+                                opacity: 0;
+                            }
+                        }
+                    }
                 }
 
                 .pipe {
@@ -807,6 +1154,10 @@ header {
                     top: 15vh;
                     right: 10%;
                     animation: pipe 12s 4.4s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 20%;
+                    }
 
                     @keyframes pipe {
                         0% {
@@ -856,6 +1207,39 @@ header {
 
                             20% {
                                 top: 35vh;
+                                right: 10%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                    @include phone() {
+                        @keyframes pipe {
+                            0% {
+                                top: 100vh;
+                                right: 10%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 40vh;
+                                right: 10%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 40vh;
                                 right: 10%;
                                 opacity: 1;
                             }
@@ -1078,6 +1462,10 @@ header {
                     right: 20%;
                     animation: mario_3 12s 8s both ease-in-out infinite;
 
+                    @include phone() {
+                        width: 45%;
+                    }
+
                     @keyframes mario_3 {
                         0% {
                             top: 100vh;
@@ -1143,6 +1531,39 @@ header {
                             }
                         }
                     }
+                    @include phone() {
+                        @keyframes mario_3 {
+                            0% {
+                                top: 100vh;
+                                right: 30%;
+                                opacity: 0;
+                            }
+
+                            10% {
+                                top: 45vh;
+                                right: 30%;
+                                opacity: 1;
+                            }
+
+                            20% {
+                                top: 45vh;
+                                right: 30%;
+                                opacity: 1;
+                            }
+
+                            30% {
+                                top: 100vh;
+                                right: 30%;
+                                opacity: 0;
+                            }
+
+                            100% {
+                                top: 100vh;
+                                right: 30%;
+                                opacity: 0
+                            }
+                        }
+                    }
                 }
 
                 .toad {
@@ -1150,6 +1571,10 @@ header {
                     top: 30vh;
                     right: 19%;
                     animation: toad 12s 8.3s both ease-in-out infinite;
+
+                    @include phone() {
+                        width: 20%;
+                    }
 
                     @keyframes toad {
                         0% {
@@ -1388,6 +1813,10 @@ header {
         height: 200px;
         background-color: #e70112;
         clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+
+        @media (max-width: 375px) {
+            height: 50px;
+        }
     }
 }
 
@@ -1402,6 +1831,11 @@ main {
     h2 {
         font-size: 3.5rem;
         margin-bottom: 2vh;
+
+        @include phone() {
+            font-size: 2rem;
+            margin: 4rem 0 2rem 0;
+        }
     }
 
     h3 {
@@ -1431,6 +1865,10 @@ main {
                 background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
                 border-radius: 15px;
                 cursor: pointer;
+
+                @include phone() {
+                    padding: 1rem;
+                }
 
                 &:hover .scenes {
                     transform: perspective(600px) rotateX(30deg) skewX(-20deg);
@@ -1488,6 +1926,8 @@ main {
             border: 2px solid transparent;
             transition: all .3s;
 
+            @include phone_btn();
+
             &:hover {
                 background-color: black;
                 color: white;
@@ -1537,20 +1977,22 @@ main {
         .switch_title {
             text-align: start;
             position: absolute;
-            top: 8%;
+            top: 5%;
             left: 10%;
 
             h2 {
-                // margin-left: -130%;
                 display: inline-block;
-            }
 
-            @include pc() {
-                // margin-left: 30%;
+                @include phone() {
+                    margin: 0;
+                }
             }
 
             @include pad() {
-                // margin: 3rem 0 0 60rem;
+                top: 3%;
+            }
+            @include phone() {
+                top: 8%;
             }
         }
 
@@ -1569,6 +2011,10 @@ main {
                 // width: 40%;
                 top: 0%;
             }
+
+            @include pad() {
+                top: -4%;
+            }
         }
 
         .star {
@@ -1581,6 +2027,10 @@ main {
                 right: 5%;
                 top: 2%;
             }
+
+            @include pad() {
+                top: -1%;
+            }
         }
 
         .list_box {
@@ -1592,6 +2042,7 @@ main {
 
             @include phone() {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                margin-top: 10rem;
             }
 
             .card_item {
@@ -1682,6 +2133,10 @@ main {
                     margin: 5rem;
                 }
 
+                @include phone() {
+                    margin: 5rem 0;
+                }
+
                 &:hover {
                     box-shadow: 0px 0px 10px rgb(153, 153, 153);
                 }
@@ -1708,6 +2163,12 @@ main {
                             left: 27.5%;
                             top: -12vh;
                         }
+
+                        @include phone() {
+                            width: 70%;
+                            left: 15%;
+                            top: -18vh;
+                        }
                     }
                 }
 
@@ -1722,6 +2183,10 @@ main {
                     margin-top: 2rem;
                     border: 2px solid transparent;
                     transition: all .3s;
+
+                    @include phone() {
+                        @include phone_btn();
+                    }
 
                     &:hover {
                         background-color: black;
