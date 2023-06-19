@@ -258,6 +258,7 @@
     </footer>
 
     <script src="./vanilla-tilt.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".VanillaTilt"), {
             max: 20,
@@ -265,17 +266,15 @@
         });
 
         // 手機版menu
-        let menu = document.querySelector('.menu');
-        let phoneNavBtn = document.querySelector('.phone_nav_btn');
-
-        menu.onclick = () => {
-            if(phoneNavBtn.classList.contains('active')){
-                phoneNavBtn.classList.remove('active');
-            }else{
-                phoneNavBtn.classList.add('active');
-            }
-        }
-
+        $(document).ready(() => {
+            $('.menu').click(() => {
+                if ($('.phone_nav_btn').hasClass('active')) {
+                    $('.phone_nav_btn').removeClass('active')
+                }else {
+                    $('.phone_nav_btn').addClass('active')
+                }
+            });
+        });
 
     </script>
 </body>

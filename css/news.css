@@ -2031,6 +2031,9 @@ footer p {
   }
 }
 .nav_section .nav_item .nav_btn a:first-child {
+  border: 2px solid transparent;
+}
+.nav_section .nav_item .nav_btn a:nth-child(4) {
   border: 2px solid white;
 }
 .nav_section .nav_item .nav_btn a {

@@ -121,6 +121,7 @@ img {
   transition: all 0.3s;
   z-index: 0;
   position: relative;
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   .nav_section .nav_item .menu {
@@ -2006,6 +2007,11 @@ footer p {
   position: static;
   top: 0px;
 }
+@media (max-width: 576px) {
+  .nav_section {
+    height: 50px;
+  }
+}
 .nav_section .nav_item {
   display: flex;
   align-items: center;
@@ -2013,6 +2019,16 @@ footer p {
   position: relative;
   height: 100px;
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item {
+    height: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .nav_btn {
+    display: none;
+  }
 }
 .nav_section .nav_item .nav_btn a:first-child {
   border: 2px solid transparent;
@@ -2049,11 +2065,52 @@ footer p {
 .nav_section .nav_item .nav_btn a:hover::before {
   width: 100%;
 }
+.nav_section .nav_item .menu {
+  display: none;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  margin: 0 0.2rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s;
+  z-index: 0;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item .menu {
+    display: block;
+  }
+}
+.nav_section .nav_item .menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #e60012;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.nav_section .nav_item .menu:hover {
+  border: 2px solid white;
+}
+.nav_section .nav_item .menu:hover::before {
+  width: 100%;
+}
 .nav_section .nav_item img {
   width: 100px;
   position: absolute;
   top: 0;
   right: 0;
+}
+@media (max-width: 576px) {
+  .nav_section .nav_item img {
+    width: 50px;
+  }
 }
 
 main #about_mario {
@@ -2062,8 +2119,29 @@ main #about_mario {
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 992px) {
+  main #about_mario {
+    height: 40vh;
+  }
+}
+@media (max-width: 576px) {
+  main #about_mario {
+    flex-direction: column;
+    height: auto;
+  }
+}
 main #about_mario .text_box {
   width: 40%;
+}
+@media (max-width: 992px) {
+  main #about_mario .text_box {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  main #about_mario .text_box {
+    width: 90%;
+  }
 }
 main #about_mario .text_box h2,
 main #about_mario .text_box p {
@@ -2072,12 +2150,34 @@ main #about_mario .text_box p {
 main #about_mario .text_box h2 {
   font-size: 5rem;
 }
+@media (max-width: 576px) {
+  main #about_mario .text_box h2 {
+    font-size: 3rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+}
 main #about_mario .text_box p {
   font-size: 1.2rem;
+}
+@media (max-width: 576px) {
+  main #about_mario .text_box p {
+    font-size: 1rem;
+  }
 }
 main #about_mario img {
   width: 35%;
   margin-top: 12rem;
+}
+@media (max-width: 992px) {
+  main #about_mario img {
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 576px) {
+  main #about_mario img {
+    margin-top: 1rem;
+    width: 80%;
+  }
 }
 main #power {
   background-color: #e70112;
@@ -2100,13 +2200,41 @@ main #power h2 {
   margin: 3rem 55rem 3rem 0;
   text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
+@media (max-width: 992px) {
+  main #power h2 {
+    margin: 3rem 20rem 3rem 0;
+  }
+}
+@media (max-width: 576px) {
+  main #power h2 {
+    font-size: 3rem;
+    margin: 2rem 0 2rem 0;
+  }
+}
 main #power .power_item {
   display: flex;
 }
+@media (max-width: 992px) {
+  main #power .power_item {
+    justify-content: center;
+  }
+}
 main #power .power_item .coins_item {
   display: flex;
+  justify-content: end;
   position: absolute;
-  left: 3%;
+  bottom: 25%;
+  margin-right: 15rem;
+}
+@media (max-width: 992px) {
+  main #power .power_item .coins_item {
+    margin-right: 5rem;
+  }
+}
+@media (max-width: 576px) {
+  main #power .power_item .coins_item {
+    display: none;
+  }
 }
 main #power .power_item .coins_item img {
   width: 5%;
@@ -2125,6 +2253,16 @@ main #power .power_item .slide_box {
   width: 100%;
   text-align: center;
 }
+@media (max-width: 992px) {
+  main #power .power_item .slide_box {
+    width: 70%;
+  }
+}
+@media (max-width: 576px) {
+  main #power .power_item .slide_box {
+    width: 90%;
+  }
+}
 main #power .power_item .slide_box .slide_img {
   border-radius: 7px;
   border: 5px solid white;
@@ -2139,11 +2277,28 @@ main #power .power_item .slide_box .power_name {
   border-radius: 50px;
   margin-top: -3rem;
 }
+@media (max-width: 576px) {
+  main #power .power_item .slide_box .power_name {
+    font-size: 1.5rem;
+  }
+}
 main #power .power_item .character_img {
   margin: -2rem 0 0 -5rem;
   width: 40%;
   height: 40%;
   animation: character_img 1.5s infinite alternate;
+}
+@media (max-width: 992px) {
+  main #power .power_item .character_img {
+    width: 25%;
+    height: 25%;
+    margin: 5rem 0 0 -8rem;
+  }
+}
+@media (max-width: 576px) {
+  main #power .power_item .character_img {
+    display: none;
+  }
 }
 @keyframes character_img {
   0% {
@@ -2155,7 +2310,17 @@ main #power .power_item .character_img {
 }
 main #power .power_item .coins_item-2 {
   position: absolute;
-  right: -65%;
+  left: 100px;
+}
+@media (max-width: 992px) {
+  main #power .power_item .coins_item-2 {
+    left: 50px;
+  }
+}
+@media (max-width: 576px) {
+  main #power .power_item .coins_item-2 {
+    left: 10px;
+  }
 }
 main #power .power_item .coins_item-2 img {
   width: 7%;
@@ -2191,6 +2356,13 @@ main #power .power_btn .btn {
   justify-content: center;
   cursor: pointer;
   transition: all 0.1s;
+  z-index: 5;
+}
+@media (max-width: 576px) {
+  main #power .power_btn .btn {
+    width: 45px;
+    height: 45px;
+  }
 }
 main #power .power_btn .btn:hover {
   background-color: white !important;
@@ -2198,6 +2370,11 @@ main #power .power_btn .btn:hover {
 }
 main #power .power_btn .btn img {
   width: 35px;
+}
+@media (max-width: 576px) {
+  main #power .power_btn .btn img {
+    width: 25px;
+  }
 }
 main #friend {
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
@@ -2208,13 +2385,34 @@ main #friend .friend_item {
   align-items: center;
   margin-top: -15rem;
 }
+@media (max-width: 992px) {
+  main #friend .friend_item {
+    margin-top: -7rem;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  main #friend .friend_item {
+    margin-top: -4rem;
+  }
+}
 main #friend .friend_item .friend_text {
   margin-right: 1rem;
+}
+@media (max-width: 992px) {
+  main #friend .friend_item .friend_text {
+    margin-right: 0;
+  }
 }
 main #friend .friend_item .friend_text h2 {
   margin: 0;
   font-size: 4rem;
   text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 576px) {
+  main #friend .friend_item .friend_text h2 {
+    font-size: 3rem;
+  }
 }
 main #friend .friend_item .friend_text a {
   display: inline-block;
@@ -2232,6 +2430,22 @@ main #friend .friend_item .friend_text a {
   border: 2px solid transparent;
   transition: all 0.3s;
 }
+@media (max-width: 576px) {
+  main #friend .friend_item .friend_text a {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+}
 main #friend .friend_item .friend_text a:hover {
   background-color: black;
   color: white;
@@ -2240,4 +2454,58 @@ main #friend .friend_item .friend_text a:hover {
 main #friend .friend_item img {
   width: 70%;
   margin-left: 1rem;
+}
+@media (max-width: 992px) {
+  main #friend .friend_item img {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e60012;
+  height: 250px;
+  text-align: center;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -190px;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  background-color: #e70112;
+  clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 576px) {
+  footer::before {
+    clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0 100%);
+  }
+}
+footer a {
+  display: block;
+  width: 200px;
+  height: 48px;
+  line-height: 48px;
+  background-color: #ce0010;
+  margin: auto;
+  border-radius: 7px;
+  border: 2px solid white;
+  transition: all 0.5s;
+  font-size: 16px;
+  font-weight: 800;
+}
+footer a:hover {
+  background-color: white;
+  color: #ce0010;
+}
+footer p {
+  font-size: 12px;
+  padding: 0 3rem 5rem 3rem;
 }/*# sourceMappingURL=about.css.map */

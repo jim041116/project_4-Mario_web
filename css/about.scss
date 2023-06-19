@@ -1,10 +1,13 @@
 @import "./style.scss";
 
-
 .nav_section {
     height: 100px;
     position: static;
     top: 0px;
+
+    @include phone() {
+        height: 50px;
+    }
 
     .nav_item {
         display: flex;
@@ -14,7 +17,14 @@
         height: 100px;
         background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
 
+        @include phone() {
+            height: 50px;
+        }
+
         .nav_btn {
+            @include phone() {
+                display: none;
+            }
 
             a:first-child {
                 border: 2px solid transparent;
@@ -58,11 +68,54 @@
             }
         }
 
+        .menu {
+            display: none;
+            text-decoration: none;
+            padding: 0.8rem 1.8rem;
+            margin: 0 0.2rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all .3s;
+            z-index: 0;
+            position: relative;
+            cursor: pointer;
+
+            @include phone() {
+                display: block;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                border-radius: 7px;
+                background-color: #e60012;
+                transition: all .3s;
+                z-index: -1;
+            }
+
+            &:hover {
+                border: 2px solid white;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+
         img {
             width: 100px;
             position: absolute;
             top: 0;
             right: 0;
+
+            @include phone() {
+                width: 50px;
+            }
         }
     }
 }
@@ -75,8 +128,25 @@ main {
         display: flex;
         flex-direction: row;
 
+        @include pad() {
+            height: 40vh;
+        }
+
+        @include phone() {
+            flex-direction: column;
+            height: auto;
+        }
+
         .text_box {
             width: 40%;
+
+            @include pad() {
+                width: 50%;
+            }
+
+            @include phone() {
+                width: 90%;
+            }
 
             h2,
             p {
@@ -85,16 +155,34 @@ main {
 
             h2 {
                 font-size: 5rem;
+
+                @include phone() {
+                    font-size: 3rem;
+                    margin: 1.5rem 0 1rem 0;
+                }
             }
 
             p {
                 font-size: 1.2rem;
+
+                @include phone() {
+                    font-size: 1rem;
+                }
             }
         }
 
         img {
             width: 35%;
             margin-top: 12rem;
+
+            @include pad() {
+                margin-top: 5rem;
+            }
+
+            @include phone() {
+                margin-top: 1rem;
+                width: 80%;
+            }
         }
     }
 
@@ -119,15 +207,38 @@ main {
             font-size: 5rem;
             margin: 3rem 55rem 3rem 0;
             text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+
+            @include pad() {
+                margin: 3rem 20rem 3rem 0;
+            }
+
+            @include phone() {
+                font-size: 3rem;
+                margin: 2rem 0 2rem 0;
+            }
         }
 
         .power_item {
             display: flex;
 
+            @include pad() {
+                justify-content: center;
+            }
+
             .coins_item {
                 display: flex;
+                justify-content: end;
                 position: absolute;
-                left: 3%;
+                bottom: 25%;
+                margin-right: 15rem;
+
+                @include pad() {
+                    margin-right: 5rem;
+                }
+
+                @include phone() {
+                    display: none;
+                }
 
                 img {
                     width: 5%;
@@ -150,6 +261,14 @@ main {
                 width: 100%;
                 text-align: center;
 
+                @include pad() {
+                    width: 70%;
+                }
+
+                @include phone() {
+                    width: 90%;
+                }
+
                 .slide_img {
                     border-radius: 7px;
                     border: 5px solid white;
@@ -164,6 +283,10 @@ main {
                     padding: 1rem 2rem;
                     border-radius: 50px;
                     margin-top: -3rem;
+
+                    @include phone() {
+                        font-size: 1.5rem;
+                    }
                 }
             }
 
@@ -173,10 +296,21 @@ main {
                 height: 40%;
                 animation: character_img 1.5s infinite alternate;
 
+                @include pad() {
+                    width: 25%;
+                    height: 25%;
+                    margin: 5rem 0 0 -8rem;
+                }
+
+                @include phone() {
+                    display: none;
+                }
+
                 @keyframes character_img {
                     0% {
                         transform: translateX(-10px);
                     }
+
                     100% {
                         transform: translateX(60px) translateY(-30px);
                     }
@@ -185,7 +319,15 @@ main {
 
             .coins_item-2 {
                 position: absolute;
-                right: -65%;
+                left: 100px;
+
+                @include pad() {
+                    left: 50px;
+                }
+
+                @include phone() {
+                    left: 10px;
+                }
 
                 img {
                     width: 7%;
@@ -227,6 +369,12 @@ main {
                 justify-content: center;
                 cursor: pointer;
                 transition: all .1s;
+                z-index: 5;
+
+                @include phone() {
+                    width: 45px;
+                    height: 45px;
+                }
 
                 &:hover {
                     background-color: white !important;
@@ -235,6 +383,10 @@ main {
 
                 img {
                     width: 35px;
+
+                    @include phone() {
+                        width: 25px;
+                    }
                 }
             }
         }
@@ -249,13 +401,29 @@ main {
             align-items: center;
             margin-top: -15rem;
 
+            @include pad() {
+                margin-top: -7rem;
+                flex-direction: column;
+            }
+            @include phone() {
+                margin-top: -4rem;
+            }
+
             .friend_text {
                 margin-right: 1rem;
+
+                @include pad() {
+                    margin-right: 0;
+                }
 
                 h2 {
                     margin: 0;
                     font-size: 4rem;
                     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+
+                    @include phone() {
+                        font-size: 3rem;
+                    }
                 }
 
                 a {
@@ -263,6 +431,11 @@ main {
                     margin-top: 2rem;
                     border: 2px solid transparent;
                     transition: all .3s;
+
+                    @include phone() {
+                        @include phone_btn();
+                        margin: 1rem 0;
+                    }
 
                     &:hover {
                         background-color: black;
@@ -275,7 +448,67 @@ main {
             img {
                 width: 70%;
                 margin-left: 1rem;
+
+                @include pad() {
+                    width: 80%;
+                    margin-left: 0;
+                }
             }
         }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e60012;
+    height: 250px;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -190px;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        background-color: #e70112;
+        clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+
+        @include phone() {
+            clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0 100%);
+        }
+    }
+
+    a {
+        display: block;
+        width: 200px;
+        height: 48px;
+        line-height: 48px;
+        background-color: #ce0010;
+        margin: auto;
+        border-radius: 7px;
+        border: 2px solid white;
+        transition: all .5s;
+
+        font: {
+            size: 16px;
+            weight: 800;
+        }
+
+
+        &:hover {
+            background-color: white;
+            color: #ce0010;
+        }
+    }
+
+    p {
+        font-size: 12px;
+        padding: 0 3rem 5rem 3rem;
     }
 }

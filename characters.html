@@ -239,361 +239,131 @@
         </footer>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
-        let mario = document.querySelector('.mario');
-        let closeImg = document.querySelector('.close_img');
-        let openImg = document.querySelector('.open_img');
-        let title = document.querySelector('.title');
-        let text = document.querySelector('.text');
 
-        mario.onclick = () => {
-            if (closeImg.style.display == 'none') {
-                closeImg.style.display = 'block';
-                openImg.style.display = 'none';
-                text.style.visibility = 'hidden';
-                text.style.top = '-10rem';
-                text.style.opacity = '0';
-                title.style.marginTop = '5rem';
-            } else {
-                closeImg.style.display = 'none';
-                openImg.style.display = 'block';
-                text.style.visibility = 'visible';
-                text.style.top = '10rem';
-                text.style.opacity = '1';
-                title.style.marginTop = '1rem';
-            }
-        }
+        $('.mario').click(() => {
+            if ($('.mario').hasClass('active')) {
+                $('.mario').removeClass('active')
+            }else {
+                $('.mario').addClass('active')
+            }            
+        });
 
-        let luigi = document.querySelector('.luigi');
-        let closeLuigi = document.querySelector('.close_luigi');
-        let openLuigi = document.querySelector('.open_luigi');
-        let luigiTitle = document.querySelector('.luigi_title');
-        let luigiText = document.querySelector('.luigi_text');
+        $('.luigi').click(() => {
+            if ($('.luigi').hasClass('active')) {
+                $('.luigi').removeClass('active')
+            }else {
+                $('.luigi').addClass('active')
+            }            
+        });
 
-        luigi.onclick = () => {
-            if (closeLuigi.style.display == 'none') {
-                closeLuigi.style.display = 'block';
-                openLuigi.style.display = 'none';
-                luigiText.style.visibility = 'hidden';
-                luigiText.style.top = '-10rem';
-                luigiText.style.opacity = '0';
-                luigiTitle.style.marginTop = '5rem';
-            } else {
-                closeLuigi.style.display = 'none';
-                openLuigi.style.display = 'block';
-                luigiText.style.visibility = 'visible';
-                luigiText.style.top = '10rem';
-                luigiText.style.opacity = '1';
-                luigiTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.peach').click(() => {
+            if ($('.peach').hasClass('active')) {
+                $('.peach').removeClass('active')
+            }else {
+                $('.peach').addClass('active')
+            }            
+        });
 
-        let peach = document.querySelector('.peach');
-        let closepeach = document.querySelector('.close_peach');
-        let openpeach = document.querySelector('.open_peach');
-        let peachTitle = document.querySelector('.peach_title');
-        let peachText = document.querySelector('.peach_text');
+        $('.toad').click(() => {
+            if ($('.toad').hasClass('active')) {
+                $('.toad').removeClass('active')
+            }else {
+                $('.toad').addClass('active')
+            }            
+        });
 
-        peach.onclick = () => {
-            if (closepeach.style.display == 'none') {
-                closepeach.style.display = 'block';
-                openpeach.style.display = 'none';
-                peachText.style.visibility = 'hidden';
-                peachText.style.top = '-10rem';
-                peachText.style.opacity = '0';
-                peachTitle.style.marginTop = '5rem';
-            } else {
-                closepeach.style.display = 'none';
-                openpeach.style.display = 'block';
-                peachText.style.visibility = 'visible';
-                peachText.style.top = '10rem';
-                peachText.style.opacity = '1';
-                peachTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.bowser').click(() => {
+            if ($('.bowser').hasClass('active')) {
+                $('.bowser').removeClass('active')
+            }else {
+                $('.bowser').addClass('active')
+            }            
+        });
 
-        let toad = document.querySelector('.toad');
-        let closetoad = document.querySelector('.close_toad');
-        let opentoad = document.querySelector('.open_toad');
-        let toadTitle = document.querySelector('.toad_title');
-        let toadText = document.querySelector('.toad_text');
+        $('.yoshi').click(() => {
+            if ($('.yoshi').hasClass('active')) {
+                $('.yoshi').removeClass('active')
+            }else {
+                $('.yoshi').addClass('active')
+            }            
+        });
 
-        toad.onclick = () => {
-            if (closetoad.style.display == 'none') {
-                closetoad.style.display = 'block';
-                opentoad.style.display = 'none';
-                toadText.style.visibility = 'hidden';
-                toadText.style.top = '-10rem';
-                toadText.style.opacity = '0';
-                toadTitle.style.marginTop = '5rem';
-            } else {
-                closetoad.style.display = 'none';
-                opentoad.style.display = 'block';
-                toadText.style.visibility = 'visible';
-                toadText.style.top = '10rem';
-                toadText.style.opacity = '1';
-                toadTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.daisy').click(() => {
+            if ($('.daisy').hasClass('active')) {
+                $('.daisy').removeClass('active')
+            }else {
+                $('.daisy').addClass('active')
+            }            
+        });
 
-        let bowser = document.querySelector('.bowser');
-        let closebowser = document.querySelector('.close_bowser');
-        let openbowser = document.querySelector('.open_bowser');
-        let bowserTitle = document.querySelector('.bowser_title');
-        let bowserText = document.querySelector('.bowser_text');
+        $('.wario').click(() => {
+            if ($('.wario').hasClass('active')) {
+                $('.wario').removeClass('active')
+            }else {
+                $('.wario').addClass('active')
+            }            
+        });
 
-        bowser.onclick = () => {
-            if (closebowser.style.display == 'none') {
-                closebowser.style.display = 'block';
-                openbowser.style.display = 'none';
-                bowserText.style.visibility = 'hidden';
-                bowserText.style.top = '-10rem';
-                bowserText.style.opacity = '0';
-                bowserTitle.style.marginTop = '5rem';
-            } else {
-                closebowser.style.display = 'none';
-                openbowser.style.display = 'block';
-                bowserText.style.visibility = 'visible';
-                bowserText.style.top = '10rem';
-                bowserText.style.opacity = '1';
-                bowserTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.waluigi').click(() => {
+            if ($('.waluigi').hasClass('active')) {
+                $('.waluigi').removeClass('active')
+            }else {
+                $('.waluigi').addClass('active')
+            }            
+        });
 
-        let yoshi = document.querySelector('.yoshi');
-        let closeyoshi = document.querySelector('.close_yoshi');
-        let openyoshi = document.querySelector('.open_yoshi');
-        let yoshiTitle = document.querySelector('.yoshi_title');
-        let yoshiText = document.querySelector('.yoshi_text');
+        $('.rosalina').click(() => {
+            if ($('.rosalina').hasClass('active')) {
+                $('.rosalina').removeClass('active')
+            }else {
+                $('.rosalina').addClass('active')
+            }            
+        });
 
-        yoshi.onclick = () => {
-            if (closeyoshi.style.display == 'none') {
-                closeyoshi.style.display = 'block';
-                openyoshi.style.display = 'none';
-                yoshiText.style.visibility = 'hidden';
-                yoshiText.style.top = '-10rem';
-                yoshiText.style.opacity = '0';
-                yoshiTitle.style.marginTop = '5rem';
-            } else {
-                closeyoshi.style.display = 'none';
-                openyoshi.style.display = 'block';
-                yoshiText.style.visibility = 'visible';
-                yoshiText.style.top = '10rem';
-                yoshiText.style.opacity = '1';
-                yoshiTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.Bowser_Jr').click(() => {
+            if ($('.Bowser_Jr').hasClass('active')) {
+                $('.Bowser_Jr').removeClass('active')
+            }else {
+                $('.Bowser_Jr').addClass('active')
+            }            
+        });
 
-        let daisy = document.querySelector('.daisy');
-        let closedaisy = document.querySelector('.close_daisy');
-        let opendaisy = document.querySelector('.open_daisy');
-        let daisyTitle = document.querySelector('.daisy_title');
-        let daisyText = document.querySelector('.daisy_text');
+        $('.boo').click(() => {
+            if ($('.boo').hasClass('active')) {
+                $('.boo').removeClass('active')
+            }else {
+                $('.boo').addClass('active')
+            }            
+        });
 
-        daisy.onclick = () => {
-            if (closedaisy.style.display == 'none') {
-                closedaisy.style.display = 'block';
-                opendaisy.style.display = 'none';
-                daisyText.style.visibility = 'hidden';
-                daisyText.style.top = '-10rem';
-                daisyText.style.opacity = '0';
-                daisyTitle.style.marginTop = '5rem';
-            } else {
-                closedaisy.style.display = 'none';
-                opendaisy.style.display = 'block';
-                daisyText.style.visibility = 'visible';
-                daisyText.style.top = '10rem';
-                daisyText.style.opacity = '1';
-                daisyTitle.style.marginTop = '1rem';
-            }
-        }
+        $('.Donkey_Kong').click(() => {
+            if ($('.Donkey_Kong').hasClass('active')) {
+                $('.Donkey_Kong').removeClass('active')
+            }else {
+                $('.Donkey_Kong').addClass('active')
+            }            
+        });
 
+        $('.Diddy_Kong').click(() => {
+            if ($('.Diddy_Kong').hasClass('active')) {
+                $('.Diddy_Kong').removeClass('active')
+            }else {
+                $('.Diddy_Kong').addClass('active')
+            }            
+        });
 
-        let wario = document.querySelector('.wario');
-        let closewario = document.querySelector('.close_wario');
-        let openwario = document.querySelector('.open_wario');
-        let warioTitle = document.querySelector('.wario_title');
-        let warioText = document.querySelector('.wario_text');
-
-        wario.onclick = () => {
-            if (closewario.style.display == 'none') {
-                closewario.style.display = 'block';
-                openwario.style.display = 'none';
-                warioText.style.visibility = 'hidden';
-                warioText.style.top = '-10rem';
-                warioText.style.opacity = '0';
-                warioTitle.style.marginTop = '5rem';
-            } else {
-                closewario.style.display = 'none';
-                openwario.style.display = 'block';
-                warioText.style.visibility = 'visible';
-                warioText.style.top = '10rem';
-                warioText.style.opacity = '1';
-                warioTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let waluigi = document.querySelector('.waluigi');
-        let closewaluigi = document.querySelector('.close_waluigi');
-        let openwaluigi = document.querySelector('.open_waluigi');
-        let waluigiTitle = document.querySelector('.waluigi_title');
-        let waluigiText = document.querySelector('.waluigi_text');
-
-        waluigi.onclick = () => {
-            if (closewaluigi.style.display == 'none') {
-                closewaluigi.style.display = 'block';
-                openwaluigi.style.display = 'none';
-                waluigiText.style.visibility = 'hidden';
-                waluigiText.style.top = '-10rem';
-                waluigiText.style.opacity = '0';
-                waluigiTitle.style.marginTop = '5rem';
-            } else {
-                closewaluigi.style.display = 'none';
-                openwaluigi.style.display = 'block';
-                waluigiText.style.visibility = 'visible';
-                waluigiText.style.top = '10rem';
-                waluigiText.style.opacity = '1';
-                waluigiTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let rosalina = document.querySelector('.rosalina');
-        let closerosalina = document.querySelector('.close_rosalina');
-        let openrosalina = document.querySelector('.open_rosalina');
-        let rosalinaTitle = document.querySelector('.rosalina_title');
-        let rosalinaText = document.querySelector('.rosalina_text');
-
-        rosalina.onclick = () => {
-            if (closerosalina.style.display == 'none') {
-                closerosalina.style.display = 'block';
-                openrosalina.style.display = 'none';
-                rosalinaText.style.visibility = 'hidden';
-                rosalinaText.style.top = '-10rem';
-                rosalinaText.style.opacity = '0';
-                rosalinaTitle.style.marginTop = '5rem';
-            } else {
-                closerosalina.style.display = 'none';
-                openrosalina.style.display = 'block';
-                rosalinaText.style.visibility = 'visible';
-                rosalinaText.style.top = '10rem';
-                rosalinaText.style.opacity = '1';
-                rosalinaTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let Bowser_Jr = document.querySelector('.Bowser_Jr');
-        let closeBowser_Jr = document.querySelector('.close_Bowser_Jr');
-        let openBowser_Jr = document.querySelector('.open_Bowser_Jr');
-        let Bowser_JrTitle = document.querySelector('.Bowser_Jr_title');
-        let Bowser_JrText = document.querySelector('.Bowser_Jr_text');
-
-        Bowser_Jr.onclick = () => {
-            if (closeBowser_Jr.style.display == 'none') {
-                closeBowser_Jr.style.display = 'block';
-                openBowser_Jr.style.display = 'none';
-                Bowser_JrText.style.visibility = 'hidden';
-                Bowser_JrText.style.top = '-10rem';
-                Bowser_JrText.style.opacity = '0';
-                Bowser_JrTitle.style.marginTop = '5rem';
-            } else {
-                closeBowser_Jr.style.display = 'none';
-                openBowser_Jr.style.display = 'block';
-                Bowser_JrText.style.visibility = 'visible';
-                Bowser_JrText.style.top = '10rem';
-                Bowser_JrText.style.opacity = '1';
-                Bowser_JrTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let boo = document.querySelector('.boo');
-        let closeboo = document.querySelector('.close_boo');
-        let openboo = document.querySelector('.open_boo');
-        let booTitle = document.querySelector('.boo_title');
-        let booText = document.querySelector('.boo_text');
-
-        boo.onclick = () => {
-            if (closeboo.style.display == 'none') {
-                closeboo.style.display = 'block';
-                openboo.style.display = 'none';
-                booText.style.visibility = 'hidden';
-                booText.style.top = '-10rem';
-                booText.style.opacity = '0';
-                booTitle.style.marginTop = '5rem';
-            } else {
-                closeboo.style.display = 'none';
-                openboo.style.display = 'block';
-                booText.style.visibility = 'visible';
-                booText.style.top = '10rem';
-                booText.style.opacity = '1';
-                booTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let Donkey_Kong = document.querySelector('.Donkey_Kong');
-        let closeDonkey_Kong = document.querySelector('.close_Donkey_Kong');
-        let openDonkey_Kong = document.querySelector('.open_Donkey_Kong');
-        let Donkey_KongTitle = document.querySelector('.Donkey_Kong_title');
-        let Donkey_KongText = document.querySelector('.Donkey_Kong_text');
-
-        Donkey_Kong.onclick = () => {
-            if (closeDonkey_Kong.style.display == 'none') {
-                closeDonkey_Kong.style.display = 'block';
-                openDonkey_Kong.style.display = 'none';
-                Donkey_KongText.style.visibility = 'hidden';
-                Donkey_KongText.style.top = '-10rem';
-                Donkey_KongText.style.opacity = '0';
-                Donkey_KongTitle.style.marginTop = '5rem';
-            } else {
-                closeDonkey_Kong.style.display = 'none';
-                openDonkey_Kong.style.display = 'block';
-                Donkey_KongText.style.visibility = 'visible';
-                Donkey_KongText.style.top = '10rem';
-                Donkey_KongText.style.opacity = '1';
-                Donkey_KongTitle.style.marginTop = '1rem';
-            }
-        }
-
-
-        let Diddy_Kong = document.querySelector('.Diddy_Kong');
-        let closeDiddy_Kong = document.querySelector('.close_Diddy_Kong');
-        let openDiddy_Kong = document.querySelector('.open_Diddy_Kong');
-        let Diddy_KongTitle = document.querySelector('.Diddy_Kong_title');
-        let Diddy_KongText = document.querySelector('.Diddy_Kong_text');
-
-        Diddy_Kong.onclick = () => {
-            if (closeDiddy_Kong.style.display == 'none') {
-                closeDiddy_Kong.style.display = 'block';
-                openDiddy_Kong.style.display = 'none';
-                Diddy_KongText.style.visibility = 'hidden';
-                Diddy_KongText.style.top = '-10rem';
-                Diddy_KongText.style.opacity = '0';
-                Diddy_KongTitle.style.marginTop = '5rem';
-            } else {
-                closeDiddy_Kong.style.display = 'none';
-                openDiddy_Kong.style.display = 'block';
-                Diddy_KongText.style.visibility = 'visible';
-                Diddy_KongText.style.top = '10rem';
-                Diddy_KongText.style.opacity = '1';
-                Diddy_KongTitle.style.marginTop = '1rem';
-            }
-        }
-
-                // 手機版menu
-                let menu = document.querySelector('.menu');
-        let phoneNavBtn = document.querySelector('.phone_nav_btn');
-
-        menu.onclick = () => {
-            if(phoneNavBtn.classList.contains('active')){
-                phoneNavBtn.classList.remove('active');
-            }else{
-                phoneNavBtn.classList.add('active');
-            }
-        }
+        // 手機版menu
+        $(document).ready(() => {
+            $('.menu').click(() => {
+                if ($('.phone_nav_btn').hasClass('active')) {
+                    $('.phone_nav_btn').removeClass('active')
+                }else {
+                    $('.phone_nav_btn').addClass('active')
+                }
+            });
+        });
 
 
     </script>
