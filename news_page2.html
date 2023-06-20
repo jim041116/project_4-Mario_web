@@ -55,7 +55,7 @@
                 game, happening now!</p>
             <p>Careen through a blazing blend of Bowser-inspired stomping grounds, including new course variants GBA
                 Bowser's Castle 4, SNES Bowser Castle 3, and RMX Bowser's Castle 1R/T.</p>
-            <img class="img_2" src="./images/Gsfc_BowserCastle3_BG02.avif" alt="">
+            <img class="img_2 smoove smoove-s" src="./images/Gsfc_BowserCastle3_BG02.avif" alt="">
             <p>Give a whirl to the new Black Jungle Bell, Gold Sushi Racer, and Dry Bones Dasher karts as well as the
                 Gold Manta Glider and Roy Oilpaper gliders.</p>
             <p>If you’re feeling mischievous, you can cause karting chaos with a collection of balloons and Mii™ Racing
@@ -76,7 +76,7 @@
         </section>
         <section id="more_news">
             <div class="list_box">
-                <div class="card_item">
+                <div class="card_item smoove smoove-s">
                     <a href="./news_page1.html">
                         <div class="scenes"><img src="./images/scenes_1.jpg" alt="#"></div>
                         <div class="role"><img src="./images/characters-1.png" alt="#"></div>
@@ -106,7 +106,17 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script>
+
+        // smoove
+        $('.smoove').smoove({
+            offset: '30%',
+        });
+
+        $('.smoove-s').smoove({
+            scale: '1.5',
+        });
 
         // goTOP
         $('#goTop').click(function () {

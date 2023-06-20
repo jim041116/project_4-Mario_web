@@ -55,7 +55,7 @@
                 happening now!</p>
             <p>Dress up in your favorite Mii™ Racing Suit and zip through newly added courses GCN Mushroom Bridge and
                 Piranha Plant Cove 3.</p>
-            <img class="img_2" src="./images/Ggc_MushroomBridge_BG01.avif" alt="">
+            <img class="img_2 smoove smoove-s" src="./images/Ggc_MushroomBridge_BG01.avif" alt="">
             <p>Blast off with the new Mach 8-R, Red Comet, Pink Comet, Green Comet, and Gold Comet karts; and the Gold
                 Origami, Red Checkered, Green Checkered, Pink Checkered, and Gold Checkered gliders.</p>
             <p>Looking to freshen up your in-game wardrobe? Try the newly added Lemmy Mii Racing Suit and Morton Mii
@@ -76,7 +76,7 @@
         </section>
         <section id="more_news">
             <div class="list_box">
-                <div class="card_item">
+                <div class="card_item smoove smoove-s">
                     <a href="./news_page2.html">
                         <div class="scenes"><img src="./images/scenes_2.jpg" alt="#"></div>
                         <div class="role"><img src="./images/characters-2.png" alt="#"></div>
@@ -107,7 +107,17 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script>
+
+        // smoove
+        $('.smoove').smoove({
+            offset: '30%',
+        });
+
+        $('.smoove-s').smoove({
+            scale: '1.5',
+        });
 
         // goTOP
         $('#goTop').click(function () {

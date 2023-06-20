@@ -62,7 +62,7 @@
                     <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
                     <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
                 </div>
-                <div class="slide_box">
+                <div class="slide_box smoove">
                     <img class="slide_img slide_1" src="./images/slide-1.jpg" alt="">
                     <p class="power_name">Racoon Mario</p>
                 </div>
@@ -75,7 +75,7 @@
                     <img src="./images/SeekPng.com_super-mario-png_209932.png" alt="">
                 </div>
             </div>
-            <div class="power_btn">
+            <div class="power_btn smoove smoove-s">
                 <div class="btn btn_1"><img src="./images/pagination-1.png" alt=""></div>
                 <div class="btn btn_2"><img src="./images/pagination-2.png" alt=""></div>
                 <div class="btn btn_3"><img src="./images/pagination-3.png" alt=""></div>
@@ -93,7 +93,7 @@
                     </div>
                     <a href="characters.html">Meet the characters　></a>
                 </div>
-                <img src="./images/character-group.png" alt="">
+                <img  class="smoove smoove_z"  src="./images/character-group.png" alt="">
             </div>
         </section>
     </main>
@@ -111,7 +111,26 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script>
+
+        // smoove
+        $('.smoove').smoove({
+            offset: '30%',
+        });
+
+        $('.smoove-s').smoove({
+            scale: '2.5',
+        });
+
+        $('.smoove_z').smoove({
+            moveY: '200px',
+            moveZ: '-500px',
+            rotateX: '90deg',
+
+        })
+
+        // power up
         let slideImg = $('.slide_img');
         let characterImg = $('.character_img');
         let powerName = $('.power_name');

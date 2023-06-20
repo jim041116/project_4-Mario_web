@@ -136,7 +136,7 @@
         <section id="news">
             <h2>Mario in the news</h2>
             <div class="list_box">
-                <div class="card_item">
+                <div class="card_item smoove smoove-1">
                     <a href="./news_page1.html">
                         <div class="scenes"><img src="./images/scenes_1.jpg" alt="#"></div>
                         <div class="role"><img src="./images/characters-1.png" alt="#"></div>
@@ -148,7 +148,7 @@
                             maiores amet. Eveniet asperiores laudantium quam architecto nobis. Laborum?</p>
                     </a>
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove smoove-2">
                     <a href="./news_page2.html">
                         <div class="scenes"><img src="./images/scenes_2.jpg" alt="#"></div>
                         <div class="role"><img src="./images/characters-2.png" alt="#"></div>
@@ -166,7 +166,7 @@
         </section>
         <section id="Mario_Kart">
             <img src="./images/wavy-line.png" alt="">
-            <img class="Mario_Kart_img"
+            <img class="Mario_Kart_img smoove"
                 src="https://mario.nintendo.com/static/b2df5b31e1a74a11b1d9c87e4819c263/8c3c2/video-button.jpg" alt="">
             <div>
                 <h3>Mario Kart 8 Deluxe – Booster Course Pass</h3>
@@ -183,24 +183,24 @@
             <img class="mario_background" src="./images/mario-background.png" alt="">
             <img class="star" src="./images/star.png" alt="">
             <div class="list_box">
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="scenes"><img src="./images/main-product-mk8-deluxe.jpg" alt="#"></div>
                     <h3>Mario Kart™ 8 Deluxe</h3>
                     <p class="content">Race with Mario and friends anytime, anywhere!</p>
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="scenes"><img src="./images/product-super-mario-3d-world-bf.jpg" alt="#"></div>
                     <h3>Super Mario™ 3D World + Bowser's Fury</h3>
                     <p class="content">Enjoy 2 Mario adventures in one—a platformer with lively multiplayer + a bonus
                         adventure.</p>
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="scenes"><img src="./images/product-super-mario-maker-2.jpg" alt="#"></div>
                     <h3>Super Mario Maker™ 2</h3>
                     <p class="content">Play, create, and share the side-scrolling Super Mario™ courses of your dreams!
                     </p>
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="scenes"><img src="./images/product-super-mario-odyssey.jpg" alt="#"></div>
                     <h3>Super Mario Odyssey™</h3>
                     <p class="content">Explore incredible places far from the Mushroom Kingdom on a massive,
@@ -212,7 +212,7 @@
         <section id="product">
             <img src="./images/wavy-line.png" alt="">
             <div class="list_box">
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="role"><img src="./images/Mario Kart.png" alt=""></div>
                     <div class="content">
                         <h3>Mario Kart™ 8 Deluxe</h3>
@@ -222,7 +222,7 @@
                     <!-- <div class="point_t"></div>
                     <div class="point_b"></div> -->
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="role"><img src="./images/Super Mario Bros.png" alt=""></div>
                     <div class="content">
                         <h3>Super Mario™ 3D World + Bowser's Fury</h3>
@@ -232,7 +232,7 @@
                     <!-- <div class="point_t"></div>
                     <div class="point_b"></div> -->
                 </div>
-                <div class="card_item">
+                <div class="card_item smoove">
                     <div class="role"><img src="./images/mario_2.png" alt=""></div>
                     <div class="content">
                         <h3>Super Mario Odyssey™</h3>
@@ -261,7 +261,24 @@
 
     <script src="./vanilla-tilt.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script>
+        // smoove
+        $('.smoove').smoove({
+            offset: '30%',
+        });
+
+        $('.smoove-1').smoove({
+            moveX: '-100px',
+            moveY: '100px',
+        });
+
+        $('.smoove-2').smoove({
+            moveX: '100px',
+            moveY: '100px',
+        });
+
+
         // 3D效果
         let windowWidth = $(window).width();
 
