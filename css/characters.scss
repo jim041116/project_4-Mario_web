@@ -134,6 +134,10 @@ header {
         justify-content: space-around;
     }
 
+    @include phone() {
+        height: 90vh;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -165,8 +169,13 @@ header {
             left: 20%;
 
             @include pad() {
-                top: -15vh;
                 left: 15%;
+            }
+
+            @include phone() {
+                width: 55%;
+                top: -35vh;
+                left: 5%;
             }
         }
 
@@ -176,8 +185,14 @@ header {
             left: 35%;
 
             @include pad() {
-                top: -25vh;
+                top: -30vh;
                 left: 45%;
+            }
+
+            @include phone() {
+                width: 60%;
+                top: -42vh;
+                left: 40%;
             }
         }
     }
@@ -191,15 +206,29 @@ header {
             margin: -8rem 0 0 0;
         }
 
+        @include phone() {
+            width: 80%;
+            // margin: -5rem 0 0 0;
+        }
+
         h2 {
             font-size: 5rem;
             color: black;
+
+            @include phone() {
+                font-size: 3rem;
+            }
         }
 
         p {
             font-size: 1.3rem;
             line-height: 2rem;
             color: black;
+
+            @include phone() {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
         }
     }
 }
@@ -225,9 +254,29 @@ main {
                 min-width: 90%;
             }
 
+            @include pad() {
+                flex-direction: column-reverse;
+            }
+
+            @media (min-width:992px) {
+                transform-style: preserve-3d;
+            }
+
             img {
                 width: 100%;
                 flex: 0.5;
+
+                @media (min-width:992px) {
+                    transform: translateZ(50px);
+                    filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.7));
+                }
+            }
+
+            .close_img {
+                @include pad() {
+                    margin: auto;
+                    width: 60%;
+                }
             }
 
             .open_img {
@@ -238,6 +287,12 @@ main {
                 @media (max-width: 1200px) {
                     width: 50%;
                     height: 50%;
+                }
+
+                @include pad() {
+                    margin-top: 0;
+                    width: 60%;
+                    margin: auto;
                 }
             }
 
@@ -253,6 +308,11 @@ main {
 
                     margin-top: 4rem;
                     transition: all .5s;
+
+                    @include phone() {
+                        font-size: 3rem;
+                        margin-top: 0;
+                    }
                 }
 
                 .text {
@@ -270,9 +330,13 @@ main {
                         padding-right: 1rem;
                     }
 
+                    @include phone() {
+                        padding-right: 0;
+                    }
+
                     p {
                         margin-bottom: 1rem;
-                        line-height: 1.5rem;    
+                        line-height: 1.5rem;
                     }
                 }
             }
@@ -338,6 +402,15 @@ main {
 
         .footer_characters {
             width: 80%;
+
+            @include pad() {
+                width: 90%;
+                margin-bottom: 4rem;
+            }
+
+            @include phone() {
+                width: 100%;
+            }
         }
     }
 }

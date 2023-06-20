@@ -310,9 +310,15 @@ $coloro_red: #e70112;
 
 .active img {
     animation: move 1s 0.5s both;
+
     @keyframes move {
-        from {transform: translateY(100px);}
-        to {transform: translateY(0px);}
+        from {
+            transform: translateY(100px);
+        }
+
+        to {
+            transform: translateY(0px);
+        }
     }
 }
 
@@ -336,8 +342,10 @@ header {
             flex-direction: column;
             margin-top: -40%;
         }
+
         @include phone() {
-            margin-top: -50%;;
+            margin-top: -50%;
+            ;
         }
 
         .col:first-child {
@@ -477,6 +485,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes mario_1 {
                             0% {
@@ -590,6 +599,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes luigi {
                             0% {
@@ -701,6 +711,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes brick {
                             0% {
@@ -1004,6 +1015,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes mario_2 {
                             0% {
@@ -1114,6 +1126,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes peach {
                             0% {
@@ -1224,6 +1237,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes pipe {
                             0% {
@@ -1531,6 +1545,7 @@ header {
                             }
                         }
                     }
+
                     @include phone() {
                         @keyframes mario_3 {
                             0% {
@@ -1853,6 +1868,7 @@ main {
             @include pad() {
                 width: 95%;
             }
+
             @include phone() {
                 flex-direction: column;
             }
@@ -1901,8 +1917,11 @@ main {
                 }
 
                 &:hover .content {
-                    bottom: 2rem;
-                    opacity: 1;
+
+                    @media (min-width: 576px) {
+                        bottom: 2rem;
+                        opacity: 1;
+                    }
                 }
 
                 .content {
@@ -1991,6 +2010,7 @@ main {
             @include pad() {
                 top: 3%;
             }
+
             @include phone() {
                 top: 8%;
             }
@@ -2226,6 +2246,28 @@ footer {
         height: 200px;
         background-color: #e70112;
         clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    img {
+        width: 70px;
+        position: fixed;
+        bottom: 15rem;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 99;
+        animation: goTop 1s infinite alternate;
+        display: none;
+
+        @keyframes goTop {
+            from {
+                transform: translateY(-10px);
+                filter: drop-shadow(0 0 15px rgb(209, 206, 24));
+            }
+
+            to {
+                transform: translateY(10px);
+            }
+        }
     }
 
     a {

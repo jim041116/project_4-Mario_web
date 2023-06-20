@@ -1980,6 +1980,25 @@ footer::before {
   background-color: #e70112;
   clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
 }
+footer img {
+  width: 70px;
+  position: fixed;
+  bottom: 15rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 99;
+  animation: goTop 1s infinite alternate;
+  display: none;
+}
+@keyframes goTop {
+  from {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 0 15px rgb(209, 206, 24));
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
 footer a {
   display: block;
   width: 200px;

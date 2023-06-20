@@ -94,25 +94,41 @@
         </section>
     </main>
     <footer>
+        <img id="goTop" src="./images/to_top.png" alt="">
         <a href="#">
             Customer support　>
         </a>
         <p>Game trademarks and copyrights are properties of their respective owners. Nintendo properties are
             trademarks of Nintendo. © 2020 Nintendo.<br>
-            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and some
+            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and
+            some
             accessories sold separately.<br>
             **Full version of game required to use DLC. Sold separately.</p>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
-                // 手機版menu
-                let menu = document.querySelector('.menu');
+
+        // goTOP
+        $('#goTop').click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 1500);
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#goTop').fadeIn();
+            } else {
+                $('#goTop').fadeOut();
+            }
+        });
+
+        // 手機版menu
+        let menu = document.querySelector('.menu');
         let phoneNavBtn = document.querySelector('.phone_nav_btn');
 
         menu.onclick = () => {
-            if(phoneNavBtn.classList.contains('active')){
+            if (phoneNavBtn.classList.contains('active')) {
                 phoneNavBtn.classList.remove('active');
-            }else{
+            } else {
                 phoneNavBtn.classList.add('active');
             }
         }

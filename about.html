@@ -98,12 +98,14 @@
         </section>
     </main>
     <footer>
+        <img id="goTop" src="./images/to_top.png" alt="">
         <a href="#">
             Customer support　>
         </a>
         <p>Game trademarks and copyrights are properties of their respective owners. Nintendo properties are
             trademarks of Nintendo. © 2020 Nintendo.<br>
-            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and some
+            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and
+            some
             accessories sold separately.<br>
             **Full version of game required to use DLC. Sold separately.</p>
     </footer>
@@ -249,12 +251,24 @@
             });
         });
 
+        // goTOP
+        $('#goTop').click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 1500);
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#goTop').fadeIn();
+            } else {
+                $('#goTop').fadeOut();
+            }
+        });
+
         // 手機版menu
         $(document).ready(() => {
             $('.menu').click(() => {
                 if ($('.phone_nav_btn').hasClass('active')) {
                     $('.phone_nav_btn').removeClass('active')
-                }else {
+                } else {
                     $('.phone_nav_btn').addClass('active')
                 }
             });

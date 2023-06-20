@@ -1980,6 +1980,25 @@ footer::before {
   background-color: #e70112;
   clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
 }
+footer img {
+  width: 70px;
+  position: fixed;
+  bottom: 15rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 99;
+  animation: goTop 1s infinite alternate;
+  display: none;
+}
+@keyframes goTop {
+  from {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 0 15px rgb(209, 206, 24));
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
 footer a {
   display: block;
   width: 200px;
@@ -2128,6 +2147,11 @@ header {
     justify-content: space-around;
   }
 }
+@media (max-width: 576px) {
+  header {
+    height: 90vh;
+  }
+}
 header::before {
   content: "";
   position: absolute;
@@ -2159,8 +2183,14 @@ header .mario_img .header-luigi {
 }
 @media (max-width: 992px) {
   header .mario_img .header-luigi {
-    top: -15vh;
     left: 15%;
+  }
+}
+@media (max-width: 576px) {
+  header .mario_img .header-luigi {
+    width: 55%;
+    top: -35vh;
+    left: 5%;
   }
 }
 header .mario_img .header-mario {
@@ -2170,8 +2200,15 @@ header .mario_img .header-mario {
 }
 @media (max-width: 992px) {
   header .mario_img .header-mario {
-    top: -25vh;
+    top: -30vh;
     left: 45%;
+  }
+}
+@media (max-width: 576px) {
+  header .mario_img .header-mario {
+    width: 60%;
+    top: -42vh;
+    left: 40%;
   }
 }
 header .text_box {
@@ -2184,14 +2221,30 @@ header .text_box {
     margin: -8rem 0 0 0;
   }
 }
+@media (max-width: 576px) {
+  header .text_box {
+    width: 80%;
+  }
+}
 header .text_box h2 {
   font-size: 5rem;
   color: black;
+}
+@media (max-width: 576px) {
+  header .text_box h2 {
+    font-size: 3rem;
+  }
 }
 header .text_box p {
   font-size: 1.3rem;
   line-height: 2rem;
   color: black;
+}
+@media (max-width: 576px) {
+  header .text_box p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 main {
@@ -2216,9 +2269,31 @@ main #characters .characters_item {
     min-width: 90%;
   }
 }
+@media (max-width: 992px) {
+  main #characters .characters_item {
+    flex-direction: column-reverse;
+  }
+}
+@media (min-width: 992px) {
+  main #characters .characters_item {
+    transform-style: preserve-3d;
+  }
+}
 main #characters .characters_item img {
   width: 100%;
   flex: 0.5;
+}
+@media (min-width: 992px) {
+  main #characters .characters_item img {
+    transform: translateZ(50px);
+    filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.7));
+  }
+}
+@media (max-width: 992px) {
+  main #characters .characters_item .close_img {
+    margin: auto;
+    width: 60%;
+  }
 }
 main #characters .characters_item .open_img {
   margin-top: -5rem;
@@ -2231,6 +2306,13 @@ main #characters .characters_item .open_img {
     height: 50%;
   }
 }
+@media (max-width: 992px) {
+  main #characters .characters_item .open_img {
+    margin-top: 0;
+    width: 60%;
+    margin: auto;
+  }
+}
 main #characters .characters_item .characters_text {
   padding: 2rem;
   flex: 1;
@@ -2241,6 +2323,12 @@ main #characters .characters_item .characters_text .title {
   margin-top: 4rem;
   transition: all 0.5s;
 }
+@media (max-width: 576px) {
+  main #characters .characters_item .characters_text .title {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+}
 main #characters .characters_item .characters_text .text {
   padding-right: 2rem;
   transition: all 0.5s;
@@ -2250,6 +2338,11 @@ main #characters .characters_item .characters_text .text {
 @media (max-width: 1200px) {
   main #characters .characters_item .characters_text .text {
     padding-right: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  main #characters .characters_item .characters_text .text {
+    padding-right: 0;
   }
 }
 main #characters .characters_item .characters_text .text p {
@@ -2302,6 +2395,17 @@ main #characters .Diddy_Kong {
 }
 main #characters .footer_characters {
   width: 80%;
+}
+@media (max-width: 992px) {
+  main #characters .footer_characters {
+    width: 90%;
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 576px) {
+  main #characters .footer_characters {
+    width: 100%;
+  }
 }
 
 main .active .text {

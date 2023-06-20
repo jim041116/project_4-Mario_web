@@ -212,7 +212,7 @@
         <section id="product">
             <img src="./images/wavy-line.png" alt="">
             <div class="list_box">
-                <div class="card_item VanillaTilt">
+                <div class="card_item">
                     <div class="role"><img src="./images/Mario Kart.png" alt=""></div>
                     <div class="content">
                         <h3>Mario Kart™ 8 Deluxe</h3>
@@ -222,7 +222,7 @@
                     <!-- <div class="point_t"></div>
                     <div class="point_b"></div> -->
                 </div>
-                <div class="card_item VanillaTilt">
+                <div class="card_item">
                     <div class="role"><img src="./images/Super Mario Bros.png" alt=""></div>
                     <div class="content">
                         <h3>Super Mario™ 3D World + Bowser's Fury</h3>
@@ -232,7 +232,7 @@
                     <!-- <div class="point_t"></div>
                     <div class="point_b"></div> -->
                 </div>
-                <div class="card_item VanillaTilt">
+                <div class="card_item">
                     <div class="role"><img src="./images/mario_2.png" alt=""></div>
                     <div class="content">
                         <h3>Super Mario Odyssey™</h3>
@@ -247,12 +247,14 @@
         </section>
     </main>
     <footer>
+        <img id="goTop" src="./images/to_top.png" alt="">
         <a href="#">
             Customer support　>
         </a>
         <p>Game trademarks and copyrights are properties of their respective owners. Nintendo properties are
             trademarks of Nintendo. © 2020 Nintendo.<br>
-            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and some
+            *Additional games, systems and/or accessories may be required for multiplayer mode. Games, systems and
+            some
             accessories sold separately.<br>
             **Full version of game required to use DLC. Sold separately.</p>
     </footer>
@@ -260,9 +262,30 @@
     <script src="./vanilla-tilt.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
+        // 3D效果
+        let windowWidth = $(window).width();
+
+        if (windowWidth <= 991) {
+            $('#product .card_item').removeClass('VanillaTilt')
+        } else if (windowWidth >= 992) {
+            $('#product .card_item').addClass('VanillaTilt')
+        }
+
         VanillaTilt.init(document.querySelectorAll(".VanillaTilt"), {
-            max: 20,
-            speed: 500
+            max: 10,
+            speed: 300
+        });
+
+        // goTOP
+        $('#goTop').click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 1500);
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#goTop').fadeIn();
+            } else {
+                $('#goTop').fadeOut();
+            }
         });
 
         // 手機版menu
@@ -270,7 +293,7 @@
             $('.menu').click(() => {
                 if ($('.phone_nav_btn').hasClass('active')) {
                     $('.phone_nav_btn').removeClass('active')
-                }else {
+                } else {
                     $('.phone_nav_btn').addClass('active')
                 }
             });
