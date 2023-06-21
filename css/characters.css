@@ -1613,9 +1613,11 @@ main #news .list_box .card_item .date {
   font-size: 1.2rem;
   margin: 1.2vh 0;
 }
-main #news .list_box .card_item:hover .content {
-  bottom: 2rem;
-  opacity: 1;
+@media (min-width: 576px) {
+  main #news .list_box .card_item:hover .content {
+    bottom: 2rem;
+    opacity: 1;
+  }
 }
 main #news .list_box .card_item .content {
   position: absolute;
