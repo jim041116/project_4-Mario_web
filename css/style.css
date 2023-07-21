@@ -55,6 +55,11 @@ img {
   position: static;
   top: 0px;
 }
+@media (max-width: 1440px) {
+  .nav_section {
+    height: 80px;
+  }
+}
 @media (max-width: 576px) {
   .nav_section {
     height: 50px;
@@ -67,6 +72,11 @@ img {
   position: relative;
   height: 100px;
   background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+}
+@media (max-width: 1440px) {
+  .nav_section .nav_item {
+    height: 80px;
+  }
 }
 @media (max-width: 576px) {
   .nav_section .nav_item {
@@ -152,6 +162,11 @@ img {
   top: 0;
   right: 0;
 }
+@media (max-width: 1440px) {
+  .nav_section .nav_item img {
+    width: 80px;
+  }
+}
 @media (max-width: 576px) {
   .nav_section .nav_item img {
     width: 50px;
@@ -230,7 +245,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 140px);
   overflow: hidden;
   background-image: url(../images/bg-pattern-logos.png), linear-gradient(180deg, #e70112 16%, #b20722 76%);
   position: relative;
@@ -243,7 +258,7 @@ header .row {
 @media (max-width: 992px) {
   header .row {
     flex-direction: column;
-    margin-top: -40%;
+    margin-top: -60%;
   }
 }
 @media (max-width: 576px) {
@@ -254,8 +269,14 @@ header .row {
 header .row .col:first-child {
   width: 50%;
 }
-@media (max-width: 576px) {
+@media (max-width: 1440px) {
   header .row .col:first-child {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 992px) {
+  header .row .col:first-child {
+    margin-top: 0;
     width: 100%;
   }
 }
@@ -269,6 +290,11 @@ header .row .col:first-child h2 span:first-child {
 }
 header .row .col:first-child h2 span:last-child {
   font-size: 11rem;
+}
+@media (max-width: 1440px) {
+  header .row .col:first-child h2 span:last-child {
+    font-size: 7rem;
+  }
 }
 @media (max-width: 576px) {
   header .row .col:first-child h2 span:last-child {
@@ -305,6 +331,21 @@ header .row .col:first-child a:hover {
   background-color: black;
   color: white;
   border: 2px solid white;
+}
+@media (max-width: 1440px) {
+  header .row .col:first-child a {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.3rem;
+  }
 }
 @media (max-width: 576px) {
   header .row .col:first-child a {
@@ -1530,6 +1571,16 @@ header::before {
   height: 200px;
   background-color: #e70112;
   clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 1440px) {
+  header::before {
+    height: 100px;
+  }
+}
+@media (max-width: 992px) {
+  header::before {
+    height: 200px;
+  }
 }
 @media (max-width: 375px) {
   header::before {
